@@ -19,7 +19,7 @@ class ProjectTableViewCell: UITableViewCell {
                 
                 participantsListController.participantPictures = self.project!.participants.flatMap({$0.profilePicture})
                 
-                participantsListController.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "participantID")
+//                participantsListController.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "participantID")
 //                participantsListController.collectionView?.reloadData()
             }
         }
