@@ -9,6 +9,8 @@
 import UIKit
 
 class ProjectsTableViewController: UITableViewController {
+    
+    var projects: [Project] = [Project(name: "Remove busy-waiting in timer-sleep", description: "Use an interrupt-driven approach in timer_sleep", participants: [])]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,23 +31,29 @@ class ProjectsTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return projects.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("projectID", forIndexPath: indexPath)
 
-        // Configure the cell...
+        guard let projectCell = cell as? ProjectTableViewCell else {
+            fatalError("Project cell could not be casted to ProjectTableViewCell")
+        }
+        
+        let project = projects[indexPath.row]
+        projectCell.projectName.text = project.name
+        projectCell.projectDescription.text = project.description
+//        projectCell.participantsView = 
+        projectCell.participantsCount.text = "\(project.participants.count)"
 
-        return cell
+        return projectCell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
