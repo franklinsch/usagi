@@ -12,19 +12,23 @@ class ProjectViewController: UIViewController {
     
     var project: Project? = nil
     
-    @IBOutlet weak var projectTitle: UILabel!
+//    @IBOutlet weak var projectTitle: UILabel!
     @IBOutlet weak var participantsList: UICollectionView!
     @IBOutlet weak var projectDescription: UITextView!
     @IBOutlet weak var tasksTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let projectName = self.project?.name {
-            self.projectTitle!.text = projectName
-        }
-        if let description = self.project?.description {
-            self.projectDescription?.text = description
+        
+        if let project = self.project {
+            self.navigationItem.title = project.name
+            self.projectDescription?.text = project.description
+            
+            guard let tasksTableViewContoller = tasksTableView.delegate as? ProjectsTableViewController else {
+                fatalError()
+            }
+            
+           tasksTableViewContoller.projects = project.subtasks
         }
     }
 

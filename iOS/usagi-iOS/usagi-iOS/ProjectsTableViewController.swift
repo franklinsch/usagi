@@ -11,11 +11,13 @@ import UIKit
 class ProjectsTableViewController: UITableViewController {
     
     var projects: [Project] = [
-        Project(name: "Operating System Scheduler", description: "Reimplement timer_sleep(), defined in ‘devices/timer.c’. Although a working implementation of timer_sleep is provided, it \"busy waits\", that is, it spins in a loop checking the current time and calling thread_yield() until enough time has gone by. Reimplement it to avoid busy waiting.", participants: [User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "tonyfield.jpg"))]),
+        Project(name: "Operating System Scheduler", description: "Reimplement timer_sleep(), defined in ‘devices/timer.c’. \nAlthough a working implementation of timer_sleep is provided, it \"busy waits\", that is, it spins in a loop checking the current time and calling thread_yield() until enough time has gone by. Reimplement it to avoid busy waiting.", participants: [User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "tonyfield.jpg"))], subtasks: [
+            Project(name: "Refactor timer_interrupt", description: "", participants: [], subtasks: [])
+            ]),
         
-        Project(name: "Web server in Swift", description: "Creating a web server running on Swift.", participants: [User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "tonyfield.jpg")), User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "tonyfield.jpg"))]),
+        Project(name: "Web server in Swift", description: "Creating a web server running on Swift.", participants: [User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "tonyfield.jpg")), User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "tonyfield.jpg"))], subtasks: []),
         
-        Project(name: "Potato Launcher", description: "Revolutionize the way we launch potatoes.", participants: [User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "tonyfield.jpg"))]),
+        Project(name: "Potato Launcher", description: "Revolutionize the way we launch potatoes.", participants: [User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "tonyfield.jpg"))], subtasks: []),
     ]
 
     override func viewDidLoad() {
@@ -106,17 +108,18 @@ class ProjectsTableViewController: UITableViewController {
     */
 
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "projectDetail" {
             guard let projectViewController = segue.destinationViewController as? ProjectViewController else {
-               fatalError()
+                fatalError()
             }
             
-            let selectedProject = projects[tableView.indexPathForSelectedRow!.row]
-            projectViewController.project = selectedProject
+            if let row = tableView.indexPathForCell(sender as! UITableViewCell)?.row {
+                let selectedProject = projects[row]
+                projectViewController.project = selectedProject
+            }
         }
     }
-
 }

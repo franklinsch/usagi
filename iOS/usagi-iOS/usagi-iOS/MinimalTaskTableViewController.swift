@@ -10,8 +10,12 @@ import UIKit
 
 class MinimalTaskTableViewController: UITableViewController {
     
-    var tasks: [Project] = [Project(name: "Remove busy-waiting in timer-sleep", description: "Use an interrupt-driven approach in timer_sleep", participants: [User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "tonyfield.jpg"))])]
-
+    var tasks: [Project] = [] {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
 

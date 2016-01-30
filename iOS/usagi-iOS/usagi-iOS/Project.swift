@@ -12,4 +12,5 @@ struct Project {
     var name: String
     var description: String
     var participants: [User]
+    var subtasks: [Project]
 }
