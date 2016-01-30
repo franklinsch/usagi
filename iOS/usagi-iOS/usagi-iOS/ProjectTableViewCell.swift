@@ -15,10 +15,13 @@ class ProjectTableViewCell: UITableViewCell {
     @IBOutlet weak var projectDescription: UILabel!
     @IBOutlet weak var participantsView: UICollectionView!
     @IBOutlet weak var participantsCount: UILabel!
+    @IBOutlet weak var participantsCountBackgroundView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        participantsCountBackgroundView.layer.cornerRadius = participantsCountBackgroundView.frame.width / 2
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

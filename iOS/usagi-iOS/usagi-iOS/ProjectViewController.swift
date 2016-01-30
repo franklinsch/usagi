@@ -10,6 +10,8 @@ import UIKit
 
 class ProjectViewController: UIViewController {
     
+    var project: Project? = nil
+    
     @IBOutlet weak var projectTitle: UILabel!
     @IBOutlet weak var participantsList: UICollectionView!
     @IBOutlet weak var projectDescription: UITextView!
@@ -18,7 +20,12 @@ class ProjectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let projectName = self.project?.name {
+            self.projectTitle!.text = projectName
+        }
+        if let description = self.project?.description {
+            self.projectDescription?.text = description
+        }
     }
 
     override func didReceiveMemoryWarning() {

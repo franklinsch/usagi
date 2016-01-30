@@ -19,6 +19,7 @@
 		25DE8DC91C5D0087007D4BA0 /* tonyfield.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25DE8DC81C5D0087007D4BA0 /* tonyfield.jpg */; };
 		25DE8DCE1C5D0247007D4BA0 /* ParticipantsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DE8DCD1C5D0247007D4BA0 /* ParticipantsCollectionViewController.swift */; };
 		25DE8DD11C5D095D007D4BA0 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DE8DD01C5D095D007D4BA0 /* ProjectViewController.swift */; };
+		25DE8DD51C5D0B91007D4BA0 /* MinimalTaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DE8DD41C5D0B91007D4BA0 /* MinimalTaskTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		25DE8DC81C5D0087007D4BA0 /* tonyfield.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tonyfield.jpg; sourceTree = "<group>"; };
 		25DE8DCD1C5D0247007D4BA0 /* ParticipantsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantsCollectionViewController.swift; sourceTree = "<group>"; };
 		25DE8DD01C5D095D007D4BA0 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
+		25DE8DD41C5D0B91007D4BA0 /* MinimalTaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinimalTaskTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			children = (
 				25DE8DCF1C5D08D2007D4BA0 /* ProjectView */,
 				25DE8DC31C5CFCAA007D4BA0 /* ProjectsTableViewController.swift */,
+				25DE8DD41C5D0B91007D4BA0 /* MinimalTaskTableViewController.swift */,
 				25DE8DCD1C5D0247007D4BA0 /* ParticipantsCollectionViewController.swift */,
 				25DE8DB91C5CF9AD007D4BA0 /* ProjectTableViewCell.swift */,
 			);
@@ -200,6 +203,7 @@
 				25BD30001C5CEE1200D2E521 /* usagi_iOS.xcdatamodeld in Sources */,
 				25DE8DBA1C5CF9AD007D4BA0 /* ProjectTableViewCell.swift in Sources */,
 				25BD2FF81C5CEE1200D2E521 /* AppDelegate.swift in Sources */,
+				25DE8DD51C5D0B91007D4BA0 /* MinimalTaskTableViewController.swift in Sources */,
 				25DE8DC01C5CFA95007D4BA0 /* User.swift in Sources */,
 				25DE8DD11C5D095D007D4BA0 /* ProjectViewController.swift in Sources */,
 				25DE8DBE1C5CFA6E007D4BA0 /* Project.swift in Sources */,
