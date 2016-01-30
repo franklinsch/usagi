@@ -8,15 +8,11 @@
 
 import UIKit
 
-private let reuseIdentifier = "participantPictureID"
+private let reuseIdentifier = "participantID"
 
 class ParticipantsCollectionViewController: UICollectionViewController {
     
-    var participantPictures = [UIImage]() {
-        didSet {
-            collectionView?.reloadData()
-        }
-    }
+    var participantPictures = [UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()

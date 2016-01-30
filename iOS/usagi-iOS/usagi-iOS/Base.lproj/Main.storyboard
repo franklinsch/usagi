@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="projectID" rowHeight="80" id="TNk-Ui-yMa" customClass="ProjectTableViewCell" customModule="usagi_iOS" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="projectID" rowHeight="80" id="TNk-Ui-yMa" customClass="ProjectTableViewCell" customModule="usagi_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TNk-Ui-yMa" id="sXG-Ev-Vtq">
@@ -120,18 +120,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remove busy-waiting in timer_sleep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40g-aD-flJ">
-                                <rect key="frame" x="88" y="115" width="425" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove busy-waiting in timer_sleep" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40g-aD-flJ">
+                                <rect key="frame" x="25" y="89" width="550" height="32.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completion: 80%     Est. time remaining: 6h30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dk9-hQ-L0X">
+                                <rect key="frame" x="153" y="142" width="295" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" red="0.27852746210000001" green="0.27852746210000001" blue="0.27852746210000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mr2-sG-m4F">
+                                <rect key="frame" x="254" y="285" width="92" height="30"/>
+                                <state key="normal" title="Start working"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="40g-aD-flJ" firstAttribute="centerX" secondItem="61n-EN-peL" secondAttribute="centerX" id="5Ir-zA-eve"/>
+                            <constraint firstItem="dk9-hQ-L0X" firstAttribute="top" secondItem="40g-aD-flJ" secondAttribute="bottom" constant="20.5" id="CkR-ft-wIc"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="40g-aD-flJ" secondAttribute="trailing" constant="5" id="Hak-Lf-xl4"/>
+                            <constraint firstItem="40g-aD-flJ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="61n-EN-peL" secondAttribute="leadingMargin" constant="5" id="SXB-OX-PJT"/>
+                            <constraint firstItem="dk9-hQ-L0X" firstAttribute="centerX" secondItem="61n-EN-peL" secondAttribute="centerX" id="XuJ-DP-g6P"/>
+                            <constraint firstItem="40g-aD-flJ" firstAttribute="top" secondItem="N0f-15-E57" secondAttribute="bottom" constant="25" id="m1q-xn-oEd"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Current Task" id="i1C-7t-JsB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLm-OA-a1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="pk8-7X-bfE" customClass="ParticipantsCollectionViewController" customModule="usagi_iOS" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1482" y="754"/>
         </scene>
@@ -152,24 +171,13 @@
                                 <state key="normal" title="Request participation"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uZF-fi-S7F">
-                                <rect key="frame" x="20" y="224" width="43.5" height="19.5"/>
+                                <rect key="frame" x="20" y="287" width="43.5" height="19.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XGh-eS-6sy">
-                                <rect key="frame" x="20" y="72" width="560" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="T4R-OA-2Ri"/>
-                                </constraints>
-                                <string key="text">Reimplement timer_sleep(), defined in ‘devices/timer.c’.
-Although a working implementation of timer_sleep is provided, it "busy waits", that is, it spins in a loop checking the current time and calling thread_yield() until enough time has gone by. Reimplement it to avoid busy waiting.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rza-2v-Rt0">
-                                <rect key="frame" x="20" y="245.5" width="560" height="247.5"/>
+                                <rect key="frame" x="20" y="308.5" width="560" height="184.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="projectID" rowHeight="60" id="ruO-2B-Cmb" customClass="ProjectTableViewCell" customModule="usagi_iOS" customModuleProvider="target">
@@ -237,37 +245,81 @@ Although a working implementation of timer_sleep is provided, it "busy waits", t
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completion: 80%     Est. time remaining: 6h30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VH7-vt-Jxy">
-                                <rect key="frame" x="152.5" y="192" width="295" height="17"/>
+                                <rect key="frame" x="152.5" y="255" width="295" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" red="0.27852746210000001" green="0.27852746210000001" blue="0.27852746210000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J0r-au-ZCU">
+                                <rect key="frame" x="20" y="72" width="560" height="55"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="5l3-Tc-DwT"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="R3e-4I-yEB">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="participantID" id="Xdf-4c-836">
+                                        <rect key="frame" x="0.0" y="2.5" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="O8V-LL-v42" id="3gh-jo-ROi"/>
+                                    <outlet property="delegate" destination="O8V-LL-v42" id="rP5-f9-gET"/>
+                                </connections>
+                            </collectionView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XGh-eS-6sy">
+                                <rect key="frame" x="20" y="135" width="560" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="T4R-OA-2Ri"/>
+                                </constraints>
+                                <string key="text">Reimplement timer_sleep(), defined in ‘devices/timer.c’.
+Although a working implementation of timer_sleep is provided, it "busy waits", that is, it spins in a loop checking the current time and calling thread_yield() until enough time has gone by. Reimplement it to avoid busy waiting.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cb3-kF-B1n" firstAttribute="top" secondItem="rza-2v-Rt0" secondAttribute="bottom" constant="8" id="0Z1-s8-g64"/>
-                            <constraint firstItem="XGh-eS-6sy" firstAttribute="top" secondItem="5Pd-Gb-rUU" secondAttribute="bottom" constant="8" id="6hi-kH-Qzs"/>
+                            <constraint firstItem="J0r-au-ZCU" firstAttribute="centerX" secondItem="aux-92-PLg" secondAttribute="centerX" id="272-qm-7p2"/>
                             <constraint firstItem="rza-2v-Rt0" firstAttribute="leading" secondItem="aux-92-PLg" secondAttribute="leadingMargin" id="BlI-pI-oeD"/>
                             <constraint firstItem="XGh-eS-6sy" firstAttribute="leading" secondItem="aux-92-PLg" secondAttribute="leadingMargin" id="Dfu-fB-uNI"/>
                             <constraint firstItem="rza-2v-Rt0" firstAttribute="top" secondItem="uZF-fi-S7F" secondAttribute="bottom" constant="2" id="Gyq-Ii-Fe7"/>
+                            <constraint firstItem="J0r-au-ZCU" firstAttribute="trailing" secondItem="aux-92-PLg" secondAttribute="trailingMargin" id="Mj1-Dn-dIf"/>
                             <constraint firstItem="rza-2v-Rt0" firstAttribute="trailing" secondItem="aux-92-PLg" secondAttribute="trailingMargin" id="O5t-pK-9A0"/>
+                            <constraint firstItem="XGh-eS-6sy" firstAttribute="top" secondItem="J0r-au-ZCU" secondAttribute="bottom" constant="8" id="QQZ-NJ-FCa"/>
                             <constraint firstAttribute="leadingMargin" secondItem="uZF-fi-S7F" secondAttribute="leading" id="WOY-3P-TWc"/>
                             <constraint firstItem="VH7-vt-Jxy" firstAttribute="centerX" secondItem="aux-92-PLg" secondAttribute="centerX" id="YiB-Jb-rkk"/>
+                            <constraint firstItem="J0r-au-ZCU" firstAttribute="leading" secondItem="aux-92-PLg" secondAttribute="leadingMargin" id="bwJ-AG-d7g"/>
                             <constraint firstItem="VH7-vt-Jxy" firstAttribute="top" secondItem="XGh-eS-6sy" secondAttribute="bottom" constant="20" id="mVQ-XK-EqF"/>
                             <constraint firstItem="cb3-kF-B1n" firstAttribute="centerX" secondItem="aux-92-PLg" secondAttribute="centerX" id="pdM-cl-5aU"/>
+                            <constraint firstItem="J0r-au-ZCU" firstAttribute="top" secondItem="5Pd-Gb-rUU" secondAttribute="bottom" constant="8" id="pmC-WZ-KmH"/>
                             <constraint firstItem="uZF-fi-S7F" firstAttribute="top" secondItem="VH7-vt-Jxy" secondAttribute="bottom" constant="15" id="qB2-ft-pPi"/>
                             <constraint firstItem="yum-hY-xyA" firstAttribute="top" secondItem="cb3-kF-B1n" secondAttribute="bottom" constant="20" id="sQt-FW-yud"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XGh-eS-6sy" secondAttribute="trailing" id="xjg-Eq-z1T"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="participantsList" destination="J0r-au-ZCU" id="w5e-Nv-lPB"/>
                         <outlet property="projectDescription" destination="XGh-eS-6sy" id="8LA-Qh-Omk"/>
                         <outlet property="tasksTableView" destination="rza-2v-Rt0" id="ank-V2-ltv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5by-Iz-cNj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="O8V-LL-v42" customClass="ParticipantsCollectionViewController" customModule="usagi_iOS" customModuleProvider="target"/>
                 <customObject id="vFp-hY-CLR" customClass="ProjectsTableViewController" customModule="usagi_iOS" customModuleProvider="target"/>
-                <customObject id="mo5-3f-qsd" customClass="MinimalTaskTableViewController" customModule="usagi_iOS" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="2275" y="-15"/>
         </scene>

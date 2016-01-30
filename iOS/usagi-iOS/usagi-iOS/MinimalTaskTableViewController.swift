@@ -10,11 +10,7 @@ import UIKit
 
 class MinimalTaskTableViewController: UITableViewController {
     
-    var tasks: [Project] = [] {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
+    var tasks: [Project] = []
  
     override func viewDidLoad() {
         super.viewDidLoad()

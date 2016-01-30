@@ -20,6 +20,8 @@ class ProjectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.participantsList.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "participantID")
+        
         if let project = self.project {
             self.navigationItem.title = project.name
             self.projectDescription?.text = project.description
@@ -29,6 +31,12 @@ class ProjectViewController: UIViewController {
             }
             
            tasksTableViewContoller.projects = project.subtasks
+            
+            guard let participantsListController = participantsList.dataSource as? ParticipantsCollectionViewController else {
+               fatalError()
+            }
+
+            participantsListController.participantPictures = project.participants.flatMap({$0.profilePicture})
         }
     }
 
