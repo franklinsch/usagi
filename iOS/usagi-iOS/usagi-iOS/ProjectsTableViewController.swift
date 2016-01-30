@@ -10,15 +10,7 @@ import UIKit
 
 class ProjectsTableViewController: UITableViewController {
     
-    var projects: [Project] = [
-        Project(name: "Operating System Scheduler", description: "Reimplement timer_sleep(), defined in ‘devices/timer.c’. \nAlthough a working implementation of timer_sleep is provided, it \"busy waits\", that is, it spins in a loop checking the current time and calling thread_yield() until enough time has gone by. Reimplement it to avoid busy waiting.", participants: [User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "tonyfield.jpg"))], subtasks: [
-            Project(name: "Refactor timer_interrupt", description: "", participants: [], subtasks: [])
-            ]),
-        
-        Project(name: "Web server in Swift", description: "Creating a web server running on Swift.", participants: [User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "tonyfield.jpg")), User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "linus.jpeg")), User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "linus.jpeg")), User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "linus.jpeg")), User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "linus.jpeg"))], subtasks: []),
-        
-        Project(name: "Potato Launcher", description: "Revolutionize the way we launch potatoes.", participants: [User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "tonyfield.jpg"))], subtasks: []),
-    ]
+    var projects: [Project] = [MockData.schedulerProject, MockData.webServerProject, MockData.potatoLauncherProject]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,11 +49,12 @@ class ProjectsTableViewController: UITableViewController {
         let project = projects[indexPath.row]
         projectCell.projectName.text = project.name
         projectCell.projectDescription.text = project.description
-        
+        projectCell.project = project
+//        
 //        let participantPictures: [UIImage] = project.participants.flatMap({
 //            return $0.profilePicture
 //        })
-        
+//
 //        guard let _participantsView = projectCell.participantsView.delegate as? ParticipantsCollectionViewController else {
 //            fatalError("Could not cast CollectionViewController to ParticipantsCollectionViewController")
 //        }

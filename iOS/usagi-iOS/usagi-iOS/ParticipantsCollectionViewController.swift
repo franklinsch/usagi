@@ -60,10 +60,10 @@ class ParticipantsCollectionViewController: UICollectionViewController {
         // Configure the cell
         let picture = participantPictures[indexPath.row]
         
-        let imageView = UIImageView(frame: cell.frame)
+        let imageView = UIImageView(frame: cell.bounds)
         imageView.image = picture
         imageView.contentMode = .ScaleAspectFill
-        imageView.layer.cornerRadius = imageView.frame.width / 2
+        imageView.layer.cornerRadius = imageView.bounds.width / 2
         imageView.clipsToBounds = true
         
         cell.addSubview(imageView)
