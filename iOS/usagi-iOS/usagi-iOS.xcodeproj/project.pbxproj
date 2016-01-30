@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		25BD2FF81C5CEE1200D2E521 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD2FF71C5CEE1200D2E521 /* AppDelegate.swift */; };
-		25BD2FFA1C5CEE1200D2E521 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD2FF91C5CEE1200D2E521 /* ViewController.swift */; };
 		25BD2FFD1C5CEE1200D2E521 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25BD2FFB1C5CEE1200D2E521 /* Main.storyboard */; };
 		25BD30001C5CEE1200D2E521 /* usagi_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25BD2FFE1C5CEE1200D2E521 /* usagi_iOS.xcdatamodeld */; };
 		25BD30021C5CEE1200D2E521 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25BD30011C5CEE1200D2E521 /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		25BD2FF41C5CEE1100D2E521 /* usagi-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "usagi-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25BD2FF71C5CEE1200D2E521 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		25BD2FF91C5CEE1200D2E521 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		25BD2FFC1C5CEE1200D2E521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		25BD2FFF1C5CEE1200D2E521 /* usagi_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = usagi_iOS.xcdatamodel; sourceTree = "<group>"; };
 		25BD30011C5CEE1200D2E521 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				25BD2FF71C5CEE1200D2E521 /* AppDelegate.swift */,
-				25BD2FF91C5CEE1200D2E521 /* ViewController.swift */,
 				25BD2FFB1C5CEE1200D2E521 /* Main.storyboard */,
 				25BD30011C5CEE1200D2E521 /* Assets.xcassets */,
 				25BD30031C5CEE1200D2E521 /* LaunchScreen.storyboard */,
@@ -139,7 +136,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				25BD30001C5CEE1200D2E521 /* usagi_iOS.xcdatamodeld in Sources */,
-				25BD2FFA1C5CEE1200D2E521 /* ViewController.swift in Sources */,
 				25BD2FF81C5CEE1200D2E521 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +284,7 @@
 				25BD300B1C5CEE1200D2E521 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
