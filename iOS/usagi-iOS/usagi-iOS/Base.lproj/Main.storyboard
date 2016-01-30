@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="5" y="374"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Projects Table View Controller-->
         <scene sceneID="qOM-NF-ajy">
             <objects>
-                <tableViewController id="wmf-c7-cnR" sceneMemberID="viewController">
+                <tableViewController id="wmf-c7-cnR" customClass="ProjectsTableViewController" customModule="usagi_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZBM-uK-BHb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
