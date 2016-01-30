@@ -59,7 +59,14 @@ class ParticipantsCollectionViewController: UICollectionViewController {
     
         // Configure the cell
         let picture = participantPictures[indexPath.row]
-        cell.contentView.backgroundColor = UIColor(patternImage: picture)
+        
+        let imageView = UIImageView(frame: cell.frame)
+        imageView.image = picture
+        imageView.contentMode = .ScaleAspectFill
+        imageView.layer.cornerRadius = imageView.frame.width / 2
+        imageView.clipsToBounds = true
+        
+        cell.addSubview(imageView)
     
         return cell
     }

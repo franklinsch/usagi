@@ -250,13 +250,23 @@
                                 <color key="textColor" red="0.27852746210000001" green="0.27852746210000001" blue="0.27852746210000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3DI-Mi-GaA">
+                                <rect key="frame" x="20" y="135" width="560" height="112"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="lA4-8c-xbc"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J0r-au-ZCU">
                                 <rect key="frame" x="20" y="72" width="560" height="55"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="5l3-Tc-DwT"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="R3e-4I-yEB">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="0bf-34-1Sh">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -278,42 +288,31 @@
                                     <outlet property="delegate" destination="O8V-LL-v42" id="rP5-f9-gET"/>
                                 </connections>
                             </collectionView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XGh-eS-6sy">
-                                <rect key="frame" x="20" y="135" width="560" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="T4R-OA-2Ri"/>
-                                </constraints>
-                                <string key="text">Reimplement timer_sleep(), defined in ‘devices/timer.c’.
-Although a working implementation of timer_sleep is provided, it "busy waits", that is, it spins in a loop checking the current time and calling thread_yield() until enough time has gone by. Reimplement it to avoid busy waiting.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cb3-kF-B1n" firstAttribute="top" secondItem="rza-2v-Rt0" secondAttribute="bottom" constant="8" id="0Z1-s8-g64"/>
                             <constraint firstItem="J0r-au-ZCU" firstAttribute="centerX" secondItem="aux-92-PLg" secondAttribute="centerX" id="272-qm-7p2"/>
                             <constraint firstItem="rza-2v-Rt0" firstAttribute="leading" secondItem="aux-92-PLg" secondAttribute="leadingMargin" id="BlI-pI-oeD"/>
-                            <constraint firstItem="XGh-eS-6sy" firstAttribute="leading" secondItem="aux-92-PLg" secondAttribute="leadingMargin" id="Dfu-fB-uNI"/>
+                            <constraint firstItem="3DI-Mi-GaA" firstAttribute="leading" secondItem="aux-92-PLg" secondAttribute="leadingMargin" id="FFY-hw-6Cl"/>
                             <constraint firstItem="rza-2v-Rt0" firstAttribute="top" secondItem="uZF-fi-S7F" secondAttribute="bottom" constant="2" id="Gyq-Ii-Fe7"/>
                             <constraint firstItem="J0r-au-ZCU" firstAttribute="trailing" secondItem="aux-92-PLg" secondAttribute="trailingMargin" id="Mj1-Dn-dIf"/>
+                            <constraint firstItem="3DI-Mi-GaA" firstAttribute="top" secondItem="J0r-au-ZCU" secondAttribute="bottom" constant="8" id="NFZ-3y-0U3"/>
                             <constraint firstItem="rza-2v-Rt0" firstAttribute="trailing" secondItem="aux-92-PLg" secondAttribute="trailingMargin" id="O5t-pK-9A0"/>
-                            <constraint firstItem="XGh-eS-6sy" firstAttribute="top" secondItem="J0r-au-ZCU" secondAttribute="bottom" constant="8" id="QQZ-NJ-FCa"/>
                             <constraint firstAttribute="leadingMargin" secondItem="uZF-fi-S7F" secondAttribute="leading" id="WOY-3P-TWc"/>
                             <constraint firstItem="VH7-vt-Jxy" firstAttribute="centerX" secondItem="aux-92-PLg" secondAttribute="centerX" id="YiB-Jb-rkk"/>
                             <constraint firstItem="J0r-au-ZCU" firstAttribute="leading" secondItem="aux-92-PLg" secondAttribute="leadingMargin" id="bwJ-AG-d7g"/>
-                            <constraint firstItem="VH7-vt-Jxy" firstAttribute="top" secondItem="XGh-eS-6sy" secondAttribute="bottom" constant="20" id="mVQ-XK-EqF"/>
+                            <constraint firstItem="VH7-vt-Jxy" firstAttribute="top" secondItem="3DI-Mi-GaA" secondAttribute="bottom" constant="8" id="kh9-nC-9ih"/>
                             <constraint firstItem="cb3-kF-B1n" firstAttribute="centerX" secondItem="aux-92-PLg" secondAttribute="centerX" id="pdM-cl-5aU"/>
                             <constraint firstItem="J0r-au-ZCU" firstAttribute="top" secondItem="5Pd-Gb-rUU" secondAttribute="bottom" constant="8" id="pmC-WZ-KmH"/>
                             <constraint firstItem="uZF-fi-S7F" firstAttribute="top" secondItem="VH7-vt-Jxy" secondAttribute="bottom" constant="15" id="qB2-ft-pPi"/>
                             <constraint firstItem="yum-hY-xyA" firstAttribute="top" secondItem="cb3-kF-B1n" secondAttribute="bottom" constant="20" id="sQt-FW-yud"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="XGh-eS-6sy" secondAttribute="trailing" id="xjg-Eq-z1T"/>
+                            <constraint firstItem="3DI-Mi-GaA" firstAttribute="trailing" secondItem="aux-92-PLg" secondAttribute="trailingMargin" id="t1S-aG-OJq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="participantsList" destination="J0r-au-ZCU" id="w5e-Nv-lPB"/>
-                        <outlet property="projectDescription" destination="XGh-eS-6sy" id="8LA-Qh-Omk"/>
+                        <outlet property="projectDescription" destination="3DI-Mi-GaA" id="9J3-lB-Xnt"/>
                         <outlet property="tasksTableView" destination="rza-2v-Rt0" id="ank-V2-ltv"/>
                     </connections>
                 </viewController>

@@ -15,7 +15,7 @@ class ProjectsTableViewController: UITableViewController {
             Project(name: "Refactor timer_interrupt", description: "", participants: [], subtasks: [])
             ]),
         
-        Project(name: "Web server in Swift", description: "Creating a web server running on Swift.", participants: [User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "tonyfield.jpg")), User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "tonyfield.jpg"))], subtasks: []),
+        Project(name: "Web server in Swift", description: "Creating a web server running on Swift.", participants: [User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "tonyfield.jpg")), User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "linus.jpeg")), User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "linus.jpeg")), User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "linus.jpeg")), User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "linus.jpeg"))], subtasks: []),
         
         Project(name: "Potato Launcher", description: "Revolutionize the way we launch potatoes.", participants: [User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "tonyfield.jpg"))], subtasks: []),
     ]

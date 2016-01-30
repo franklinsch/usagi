@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2569950F1C5D48C900B93473 /* linus.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2569950E1C5D48C900B93473 /* linus.jpeg */; };
 		25BD2FF81C5CEE1200D2E521 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD2FF71C5CEE1200D2E521 /* AppDelegate.swift */; };
 		25BD2FFD1C5CEE1200D2E521 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25BD2FFB1C5CEE1200D2E521 /* Main.storyboard */; };
 		25BD30001C5CEE1200D2E521 /* usagi_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25BD2FFE1C5CEE1200D2E521 /* usagi_iOS.xcdatamodeld */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2569950E1C5D48C900B93473 /* linus.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = linus.jpeg; sourceTree = "<group>"; };
 		25BD2FF41C5CEE1100D2E521 /* usagi-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "usagi-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25BD2FF71C5CEE1200D2E521 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25BD2FFC1C5CEE1200D2E521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				25DE8DC81C5D0087007D4BA0 /* tonyfield.jpg */,
+				2569950E1C5D48C900B93473 /* linus.jpeg */,
 			);
 			name = Pictures;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2569950F1C5D48C900B93473 /* linus.jpeg in Resources */,
 				25DE8DC91C5D0087007D4BA0 /* tonyfield.jpg in Resources */,
 				25BD30051C5CEE1200D2E521 /* LaunchScreen.storyboard in Resources */,
 				25BD30021C5CEE1200D2E521 /* Assets.xcassets in Resources */,
