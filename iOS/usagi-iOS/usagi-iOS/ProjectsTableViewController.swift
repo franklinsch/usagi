@@ -50,9 +50,9 @@ class ProjectsTableViewController: UITableViewController {
         projectCell.projectName.text = project.name
         projectCell.projectDescription.text = project.description
         
-        let participantPictures: [UIImage] = project.participants.flatMap({
-            return $0.profilePicture
-        })
+//        let participantPictures: [UIImage] = project.participants.flatMap({
+//            return $0.profilePicture
+//        })
         
 //        guard let _participantsView = projectCell.participantsView.delegate as? ParticipantsCollectionViewController else {
 //            fatalError("Could not cast CollectionViewController to ParticipantsCollectionViewController")

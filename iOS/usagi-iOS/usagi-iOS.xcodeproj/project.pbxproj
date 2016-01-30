@@ -18,6 +18,7 @@
 		25DE8DC41C5CFCAA007D4BA0 /* ProjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DE8DC31C5CFCAA007D4BA0 /* ProjectsTableViewController.swift */; };
 		25DE8DC91C5D0087007D4BA0 /* tonyfield.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25DE8DC81C5D0087007D4BA0 /* tonyfield.jpg */; };
 		25DE8DCE1C5D0247007D4BA0 /* ParticipantsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DE8DCD1C5D0247007D4BA0 /* ParticipantsCollectionViewController.swift */; };
+		25DE8DD11C5D095D007D4BA0 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DE8DD01C5D095D007D4BA0 /* ProjectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		25DE8DC31C5CFCAA007D4BA0 /* ProjectsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewController.swift; sourceTree = "<group>"; };
 		25DE8DC81C5D0087007D4BA0 /* tonyfield.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tonyfield.jpg; sourceTree = "<group>"; };
 		25DE8DCD1C5D0247007D4BA0 /* ParticipantsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantsCollectionViewController.swift; sourceTree = "<group>"; };
+		25DE8DD01C5D095D007D4BA0 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		25DE8DBB1C5CF9AF007D4BA0 /* ProjectsView */ = {
 			isa = PBXGroup;
 			children = (
+				25DE8DCF1C5D08D2007D4BA0 /* ProjectView */,
 				25DE8DC31C5CFCAA007D4BA0 /* ProjectsTableViewController.swift */,
 				25DE8DCD1C5D0247007D4BA0 /* ParticipantsCollectionViewController.swift */,
 				25DE8DB91C5CF9AD007D4BA0 /* ProjectTableViewCell.swift */,
@@ -112,6 +115,14 @@
 				25DE8DC81C5D0087007D4BA0 /* tonyfield.jpg */,
 			);
 			name = Pictures;
+			sourceTree = "<group>";
+		};
+		25DE8DCF1C5D08D2007D4BA0 /* ProjectView */ = {
+			isa = PBXGroup;
+			children = (
+				25DE8DD01C5D095D007D4BA0 /* ProjectViewController.swift */,
+			);
+			name = ProjectView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +201,7 @@
 				25DE8DBA1C5CF9AD007D4BA0 /* ProjectTableViewCell.swift in Sources */,
 				25BD2FF81C5CEE1200D2E521 /* AppDelegate.swift in Sources */,
 				25DE8DC01C5CFA95007D4BA0 /* User.swift in Sources */,
+				25DE8DD11C5D095D007D4BA0 /* ProjectViewController.swift in Sources */,
 				25DE8DBE1C5CFA6E007D4BA0 /* Project.swift in Sources */,
 				25DE8DC41C5CFCAA007D4BA0 /* ProjectsTableViewController.swift in Sources */,
 				25DE8DCE1C5D0247007D4BA0 /* ParticipantsCollectionViewController.swift in Sources */,

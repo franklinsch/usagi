@@ -111,6 +111,7 @@
                                     <outlet property="participantsView" destination="Cfb-gr-fz8" id="L2b-KY-ziO"/>
                                     <outlet property="projectDescription" destination="Eqx-A2-iDn" id="zQS-hd-0J2"/>
                                     <outlet property="projectName" destination="enu-ah-DLv" id="vvT-bL-xTz"/>
+                                    <segue destination="di9-2i-V81" kind="show" id="l41-gI-9b6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -124,6 +125,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7m5-pY-fql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1580" y="-15"/>
+        </scene>
+        <!--Project View Controller-->
+        <scene sceneID="3qq-YX-axa">
+            <objects>
+                <viewController id="di9-2i-V81" customClass="ProjectViewController" customModule="usagi_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Pd-Gb-rUU"/>
+                        <viewControllerLayoutGuide type="bottom" id="yum-hY-xyA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aux-92-PLg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remove busy-waiting in timer_sleep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-vL-QU4">
+                                <rect key="frame" x="90" y="80" width="420" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="315-jV-Zsm">
+                                <rect key="frame" x="90" y="159.5" width="420" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Reimplement timer_sleep(), defined in ‘devices/timer.c’.Although a working implementation of timer_sleep is provided, it "busy waits", that is, it spins in a loop checking the current time and calling thread_yield() until enough time has gone by. Reimplement it to avoid busy waiting.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cb3-kF-B1n">
+                                <rect key="frame" x="227" y="513" width="147" height="30"/>
+                                <state key="normal" title="Request participation"/>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LYG-0N-Kgy">
+                                <rect key="frame" x="90" y="121" width="420" height="30.5"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GEc-RV-0pK">
+                                    <size key="itemSize" width="30" height="30"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="participantPictureID" id="xoe-Pn-mQO">
+                                        <rect key="frame" x="0.0" y="0.5" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3J6-3x-dIJ">
+                                <rect key="frame" x="90" y="300" width="420" height="205"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="participantsList" destination="LYG-0N-Kgy" id="XrD-JE-xQX"/>
+                        <outlet property="projectDescription" destination="315-jV-Zsm" id="P99-gQ-ubu"/>
+                        <outlet property="projectTitle" destination="Rbt-vL-QU4" id="GcH-gW-U0n"/>
+                        <outlet property="tasksTableView" destination="3J6-3x-dIJ" id="hgp-kE-EjU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5by-Iz-cNj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2275" y="-15"/>
         </scene>
         <!--Projects-->
         <scene sceneID="WUt-0u-rRv">
