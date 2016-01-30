@@ -12,6 +12,9 @@
 		25BD30001C5CEE1200D2E521 /* usagi_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25BD2FFE1C5CEE1200D2E521 /* usagi_iOS.xcdatamodeld */; };
 		25BD30021C5CEE1200D2E521 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25BD30011C5CEE1200D2E521 /* Assets.xcassets */; };
 		25BD30051C5CEE1200D2E521 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25BD30031C5CEE1200D2E521 /* LaunchScreen.storyboard */; };
+		25DE8DBA1C5CF9AD007D4BA0 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DE8DB91C5CF9AD007D4BA0 /* ProjectTableViewCell.swift */; };
+		25DE8DBE1C5CFA6E007D4BA0 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DE8DBD1C5CFA6E007D4BA0 /* Project.swift */; };
+		25DE8DC01C5CFA95007D4BA0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DE8DBF1C5CFA95007D4BA0 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		25BD30011C5CEE1200D2E521 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25BD30041C5CEE1200D2E521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25BD30061C5CEE1200D2E521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25DE8DB91C5CF9AD007D4BA0 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
+		25DE8DBD1C5CFA6E007D4BA0 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		25DE8DBF1C5CFA95007D4BA0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +62,31 @@
 			children = (
 				25BD2FF71C5CEE1200D2E521 /* AppDelegate.swift */,
 				25BD2FFB1C5CEE1200D2E521 /* Main.storyboard */,
+				25DE8DBB1C5CF9AF007D4BA0 /* ProjectsView */,
+				25DE8DBC1C5CFA62007D4BA0 /* Models */,
 				25BD30011C5CEE1200D2E521 /* Assets.xcassets */,
 				25BD30031C5CEE1200D2E521 /* LaunchScreen.storyboard */,
 				25BD30061C5CEE1200D2E521 /* Info.plist */,
 				25BD2FFE1C5CEE1200D2E521 /* usagi_iOS.xcdatamodeld */,
 			);
 			path = "usagi-iOS";
+			sourceTree = "<group>";
+		};
+		25DE8DBB1C5CF9AF007D4BA0 /* ProjectsView */ = {
+			isa = PBXGroup;
+			children = (
+				25DE8DB91C5CF9AD007D4BA0 /* ProjectTableViewCell.swift */,
+			);
+			name = ProjectsView;
+			sourceTree = "<group>";
+		};
+		25DE8DBC1C5CFA62007D4BA0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				25DE8DBD1C5CFA6E007D4BA0 /* Project.swift */,
+				25DE8DBF1C5CFA95007D4BA0 /* User.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +161,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				25BD30001C5CEE1200D2E521 /* usagi_iOS.xcdatamodeld in Sources */,
+				25DE8DBA1C5CF9AD007D4BA0 /* ProjectTableViewCell.swift in Sources */,
 				25BD2FF81C5CEE1200D2E521 /* AppDelegate.swift in Sources */,
+				25DE8DC01C5CFA95007D4BA0 /* User.swift in Sources */,
+				25DE8DBE1C5CFA6E007D4BA0 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

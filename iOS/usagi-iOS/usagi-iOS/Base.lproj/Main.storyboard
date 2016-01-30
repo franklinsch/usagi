@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="TNk-Ui-yMa">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="TNk-Ui-yMa" customClass="ProjectTableViewCell" customModule="usagi_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TNk-Ui-yMa" id="sXG-Ev-Vtq">
@@ -90,6 +90,11 @@
                                         <constraint firstItem="ZUb-C2-5xg" firstAttribute="centerY" secondItem="sXG-Ev-Vtq" secondAttribute="centerY" id="zYf-fN-rM4"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="participantsCount" destination="3rC-QW-4k4" id="xlu-gs-KqZ"/>
+                                    <outlet property="participantsView" destination="21P-bO-Fm9" id="Drn-4V-AUw"/>
+                                    <outlet property="projectName" destination="enu-ah-DLv" id="vvT-bL-xTz"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
