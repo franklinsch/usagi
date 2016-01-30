@@ -11,4 +11,11 @@ import Foundation
 struct User {
     var name: String
     var projects: [Project]
+    var rank: Rank
+}
+
+enum Rank {
+    case Admin
+    case ProjectManager
+    case Developer
 }
