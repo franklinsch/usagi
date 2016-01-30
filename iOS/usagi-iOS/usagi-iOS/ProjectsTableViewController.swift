@@ -10,7 +10,7 @@ import UIKit
 
 class ProjectsTableViewController: UITableViewController {
     
-    var projects: [Project] = [Project(name: "Remove busy-waiting in timer-sleep", description: "Use an interrupt-driven approach in timer_sleep", participants: [])]
+    var projects: [Project] = [Project(name: "Remove busy-waiting in timer-sleep", description: "Use an interrupt-driven approach in timer_sleep", participants: [User(name: "Tony Field", projects: [], rank: .Developer, profilePicture: UIImage(named: "tonyfield.jpg"))])]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,16 @@ class ProjectsTableViewController: UITableViewController {
         let project = projects[indexPath.row]
         projectCell.projectName.text = project.name
         projectCell.projectDescription.text = project.description
-//        projectCell.participantsView = 
+        
+        let participantPictures: [UIImage] = project.participants.flatMap({
+            return $0.profilePicture
+        })
+        
+//        guard let _participantsView = projectCell.participantsView.delegate as? ParticipantsCollectionViewController else {
+//            fatalError("Could not cast CollectionViewController to ParticipantsCollectionViewController")
+//        }
+//        
+//        _participantsView.participantPictures = participantPictures
         projectCell.participantsCount.text = "\(project.participants.count)"
 
         return projectCell

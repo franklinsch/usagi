@@ -13,7 +13,7 @@ class ProjectTableViewCell: UITableViewCell {
     // Outlets
     @IBOutlet weak var projectName: UILabel!
     @IBOutlet weak var projectDescription: UILabel!
-    @IBOutlet weak var participantsView: UIView!
+    @IBOutlet weak var participantsView: UICollectionView!
     @IBOutlet weak var participantsCount: UILabel!
     
     override func awakeFromNib() {

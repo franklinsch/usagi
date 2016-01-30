@@ -6,12 +6,13 @@
 //  Copyright © 2016 Franklin Schrans. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct User {
     var name: String
     var projects: [Project]
     var rank: Rank
+    var profilePicture: UIImage?
 }
 
 enum Rank {
