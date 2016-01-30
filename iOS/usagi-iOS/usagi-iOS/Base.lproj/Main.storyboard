@@ -39,7 +39,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="21P-bO-Fm9">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="21P-bO-Fm9">
                                             <rect key="frame" x="12" y="62" width="304" height="28.5"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </view>
@@ -90,7 +90,6 @@
                                         <constraint firstItem="ZUb-C2-5xg" firstAttribute="centerY" secondItem="sXG-Ev-Vtq" secondAttribute="centerY" id="zYf-fN-rM4"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.95970394736842102" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
