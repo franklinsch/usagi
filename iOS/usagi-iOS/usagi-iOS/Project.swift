@@ -8,9 +8,22 @@
 
 import Foundation
 
-struct Project {
+class Project {
     var name: String
     var description: String
     var participants: [User]
     var subtasks: [Project]
+    var dependsOnTasks = [Project]()
+    var progress: Int
+    var timeLeft: String
+    
+    init(name: String, description: String, participants: [User], subtasks: [Project], progress: Int, timeLeft: String, dependsOnTasks: [Project] = []) {
+        self.name = name
+        self.description = description
+        self.participants = participants
+        self.subtasks = subtasks
+        self.progress = progress
+        self.timeLeft = timeLeft
+        self.dependsOnTasks = dependsOnTasks
+    }
 }

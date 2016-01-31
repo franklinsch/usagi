@@ -22,7 +22,7 @@ class ParticipantsCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -51,6 +51,7 @@ class ParticipantsCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
+        print(participantPictures.count)
         return participantPictures.count
     }
 
@@ -59,7 +60,14 @@ class ParticipantsCollectionViewController: UICollectionViewController {
     
         // Configure the cell
         let picture = participantPictures[indexPath.row]
-        cell.contentView.backgroundColor = UIColor(patternImage: picture)
+        
+        let imageView = UIImageView(frame: cell.bounds)
+        imageView.image = picture
+        imageView.contentMode = .ScaleAspectFill
+        imageView.layer.cornerRadius = imageView.bounds.width / 2
+        imageView.clipsToBounds = true
+        
+        cell.addSubview(imageView)
     
         return cell
     }
