@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
     </dependencies>
     <scenes>
@@ -105,7 +106,7 @@
                     <navigationItem key="navigationItem" title="Projects" id="Ahp-eo-gqE">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Dck-ag-l6v">
                             <connections>
-                                <segue destination="v57-x3-Bbn" kind="show" id="lta-se-QUh"/>
+                                <segue destination="qvB-YM-zkF" kind="presentation" id="0mI-2F-Nyx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -331,11 +332,11 @@
             </objects>
             <point key="canvasLocation" x="2135" y="754"/>
         </scene>
-        <!--New Project-->
+        <!--Add Project-->
         <scene sceneID="Us7-b6-lOJ">
             <objects>
-                <tableViewController id="v57-x3-Bbn" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="0RT-kc-q39">
+                <tableViewController id="v57-x3-Bbn" customClass="NewProjectTableViewController" customModule="usagi_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="0RT-kc-q39">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -349,17 +350,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yhz-Za-m7x">
-                                                    <rect key="frame" x="109.5" y="8" width="482.5" height="27.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sx7-e9-Fvy">
                                                     <rect key="frame" x="16" y="11" width="85.5" height="21"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yhz-Za-m7x">
+                                                    <rect key="frame" x="109" y="8" width="482.5" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Yhz-Za-m7x" firstAttribute="leading" secondItem="Sx7-e9-Fvy" secondAttribute="trailing" constant="8" id="AaX-g9-ye3"/>
@@ -432,64 +433,71 @@
                             </tableViewSection>
                             <tableViewSection id="bvj-l5-slT">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="CDb-wc-grm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="weS-CO-uTl" detailTextLabel="gN1-gk-Bxl" rowHeight="44" style="IBUITableViewCellStyleValue1" id="CDb-wc-grm">
                                         <rect key="frame" x="0.0" y="361" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CDb-wc-grm" id="gzN-Pk-OSM">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4a-79-PRl">
-                                                    <rect key="frame" x="17" y="11" width="49.5" height="21"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="weS-CO-uTl">
+                                                    <rect key="frame" x="15" y="12" width="41.5" height="19.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpB-kr-U9K">
-                                                    <rect key="frame" x="560" y="11" width="22" height="22"/>
-                                                    <connections>
-                                                        <segue destination="jcT-1g-I0v" kind="show" identifier="addTaskSegue" id="Ea2-Ex-6T7"/>
-                                                    </connections>
-                                                </button>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="0 Tasks" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gN1-gk-Bxl">
+                                                    <rect key="frame" x="509.5" y="12" width="55.5" height="19.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="f4a-79-PRl" firstAttribute="top" secondItem="gzN-Pk-OSM" secondAttribute="topMargin" constant="3" id="BYA-Ib-y87"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="mpB-kr-U9K" secondAttribute="bottom" constant="3" id="TJd-kE-Wr3"/>
-                                                <constraint firstItem="mpB-kr-U9K" firstAttribute="trailing" secondItem="gzN-Pk-OSM" secondAttribute="trailingMargin" constant="-10" id="jfI-w3-Cq6"/>
-                                                <constraint firstItem="mpB-kr-U9K" firstAttribute="top" secondItem="gzN-Pk-OSM" secondAttribute="topMargin" constant="3" id="kmr-8p-YZ9"/>
-                                                <constraint firstItem="f4a-79-PRl" firstAttribute="leading" secondItem="gzN-Pk-OSM" secondAttribute="leadingMargin" constant="9" id="t4q-hD-EHw"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="f4a-79-PRl" secondAttribute="bottom" constant="3" id="tT1-Lr-1IQ"/>
-                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="jcT-1g-I0v" kind="show" id="ed4-da-UxD">
+                                                <segue key="commit" inheritsFrom="parent" id="Ppm-ZF-GxE"/>
+                                                <segue key="preview" inheritsFrom="commit" id="EZe-Cc-jQp"/>
+                                            </segue>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
                         <connections>
-                            <outlet property="delegate" destination="Ccw-uj-JDE" id="dWT-GG-7II"/>
+                            <outlet property="dataSource" destination="v57-x3-Bbn" id="Sdd-Vf-WQ0"/>
+                            <outlet property="delegate" destination="v57-x3-Bbn" id="Kny-b4-UMk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New Project" id="obH-H6-CJw">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ubH-vh-O8k">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Add Project" id="rjm-WK-DXe">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="AIp-0V-Ft7">
                             <connections>
-                                <action selector="didPressDone:" destination="Ccw-uj-JDE" id="XMk-hU-tDw"/>
+                                <segue destination="laQ-8k-T23" kind="unwind" unwindAction="cancelNewProject:" id="5nI-Dx-GAq"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="DO" systemItem="done" id="Cfu-rg-krt">
+                            <connections>
+                                <segue destination="laQ-8k-T23" kind="unwind" identifier="saveNewProject" unwindAction="saveNewProject:" id="gks-cT-Mnj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="descriptionField" destination="Qh6-cZ-e35" id="ELD-GJ-STQ"/>
+                        <outlet property="numTasksLabel" destination="gN1-gk-Bxl" id="FUi-xK-7zj"/>
+                        <outlet property="projectManagerField" destination="PUD-bC-HQ4" id="7z8-KV-U2M"/>
+                        <outlet property="projectNameField" destination="Yhz-Za-m7x" id="Qr6-aS-VJe"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="keM-O2-vmk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="Ccw-uj-JDE" customClass="NewProjectTableViewController" customModule="usagi_iOS" customModuleProvider="target">
-                    <connections>
-                        <outlet property="descriptionField" destination="Qh6-cZ-e35" id="Xdi-RD-2vO"/>
-                        <outlet property="numTasksLabel" destination="f4a-79-PRl" id="Ow1-Ai-XVG"/>
-                        <outlet property="projectManagerField" destination="PUD-bC-HQ4" id="2ur-DY-bgQ"/>
-                        <outlet property="projectNameField" destination="Yhz-Za-m7x" id="psh-9z-ub0"/>
-                    </connections>
-                </customObject>
+                <exit id="laQ-8k-T23" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2275" y="-690"/>
+            <point key="canvasLocation" x="3267" y="-722"/>
         </scene>
-        <!--Add tasks-->
+        <!--Add Tasks-->
         <scene sceneID="GoJ-gs-z9c">
             <objects>
                 <tableViewController id="jcT-1g-I0v" customClass="AddTaskTableViewController" customModule="usagi_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -498,7 +506,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Exc-JZ-Ti4">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" id="Exc-JZ-Ti4">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Exc-JZ-Ti4" id="Hye-YU-fMI">
@@ -513,19 +521,27 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Add tasks" id="VDP-HV-t68">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bm2-Wm-ZjB">
-                            <connections>
-                                <action selector="didPressAdd" destination="jcT-1g-I0v" id="dgL-23-9oe"/>
-                                <segue destination="JNA-Zh-zgj" kind="show" identifier="newTaskSegue" id="Ady-5D-Q15"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" title="Add Tasks" id="VDP-HV-t68">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="done" id="T1z-GI-BGa">
+                                <connections>
+                                    <segue destination="GjC-Ht-Bn5" kind="unwind" unwindAction="saveNewTasks:" id="33f-ZR-32M"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="bm2-Wm-ZjB">
+                                <connections>
+                                    <action selector="didPressAdd" destination="jcT-1g-I0v" id="dgL-23-9oe"/>
+                                    <segue destination="JNA-Zh-zgj" kind="show" identifier="newTaskSegue" id="Ady-5D-Q15"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ifx-QJ-2BR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="GjC-Ht-Bn5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2977" y="-690"/>
+            <point key="canvasLocation" x="4029" y="-730"/>
         </scene>
         <!--Project View Controller-->
         <scene sceneID="3qq-YX-axa">
@@ -1029,7 +1045,7 @@
         <scene sceneID="vCF-oO-bWk">
             <objects>
                 <tableViewController id="JNA-Zh-zgj" customClass="NewTaskTableViewController" customModule="usagi_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ROh-7N-6Sf">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ROh-7N-6Sf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -1126,35 +1142,32 @@
                             </tableViewSection>
                             <tableViewSection id="805-HJ-ck1">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="yFA-9t-rms">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="0CY-zF-dP6" detailTextLabel="SS4-4H-y4k" style="IBUITableViewCellStyleValue1" id="yFA-9t-rms">
                                         <rect key="frame" x="0.0" y="361" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yFA-9t-rms" id="e25-OY-Bze">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dependencies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mok-jC-KNF">
-                                                    <rect key="frame" x="16" y="11" width="92.5" height="21"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Dependent tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0CY-zF-dP6">
+                                                    <rect key="frame" x="15" y="12" width="123" height="19.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPT-eK-ZlS">
-                                                    <rect key="frame" x="570" y="11" width="22" height="22"/>
-                                                    <connections>
-                                                        <segue destination="Az7-Gf-7b7" kind="show" identifier="addDependencySegue" id="lk3-HS-TUq"/>
-                                                    </connections>
-                                                </button>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="0 dependencies" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SS4-4H-y4k">
+                                                    <rect key="frame" x="448.5" y="12" width="116.5" height="19.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="HPT-eK-ZlS" firstAttribute="trailing" secondItem="e25-OY-Bze" secondAttribute="trailingMargin" id="GRN-i6-D3g"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Mok-jC-KNF" secondAttribute="bottom" constant="3" id="PKC-aa-pyE"/>
-                                                <constraint firstItem="Mok-jC-KNF" firstAttribute="top" secondItem="e25-OY-Bze" secondAttribute="topMargin" constant="3" id="PRq-gb-xgk"/>
-                                                <constraint firstItem="HPT-eK-ZlS" firstAttribute="top" secondItem="e25-OY-Bze" secondAttribute="topMargin" constant="3" id="VVg-kP-ESr"/>
-                                                <constraint firstItem="Mok-jC-KNF" firstAttribute="leading" secondItem="e25-OY-Bze" secondAttribute="leadingMargin" constant="8" id="Zjy-nK-env"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="HPT-eK-ZlS" secondAttribute="bottom" constant="3" id="rSN-Hp-lj8"/>
-                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Az7-Gf-7b7" kind="show" identifier="addDependencySegue" id="XXQ-fH-GNh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1167,11 +1180,12 @@
                     <navigationItem key="navigationItem" title="New task" id="msx-Qa-NxS">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="QU2-6A-eQn">
                             <connections>
-                                <segue destination="KTx-Tq-6kM" kind="unwind" unwindAction="unwindToTaskList:" id="hc4-0o-hlz"/>
+                                <segue destination="KTx-Tq-6kM" kind="unwind" unwindAction="addNewTask:" id="4XV-GW-tYC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dependencyCount" destination="SS4-4H-y4k" id="8CB-1r-Vmk"/>
                         <outlet property="descriptionField" destination="zKj-oR-kbO" id="T5q-Gz-gf6"/>
                         <outlet property="projectNameField" destination="mLY-Ok-09T" id="Eh0-PM-QPE"/>
                         <outlet property="taskNameField" destination="2yn-kv-Bh1" id="RF9-GA-70A"/>
@@ -1180,9 +1194,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vtA-7Z-Nf8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KTx-Tq-6kM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3803" y="-682"/>
+            <point key="canvasLocation" x="4855" y="-722"/>
         </scene>
-        <!--Select dependent tasks-->
+        <!--Select Dependent Tasks-->
         <scene sceneID="hVD-43-06p">
             <objects>
                 <tableViewController id="Az7-Gf-7b7" customClass="AddDependencyTableViewController" customModule="usagi_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -1191,7 +1205,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3vD-V7-gH5">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="dependencyCell" id="3vD-V7-gH5">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3vD-V7-gH5" id="q0W-Zm-xE3">
@@ -1205,10 +1219,10 @@
                             <outlet property="delegate" destination="Az7-Gf-7b7" id="8Im-f9-sSs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Select dependent tasks" id="g4X-HQ-3da">
+                    <navigationItem key="navigationItem" title="Select Dependent Tasks" id="g4X-HQ-3da">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="wMM-PN-CBc">
                             <connections>
-                                <segue destination="RfB-Fm-TXz" kind="unwind" unwindAction="didPressDone:" id="xry-fF-iVJ"/>
+                                <segue destination="RfB-Fm-TXz" kind="unwind" unwindAction="addNewDependency:" id="11n-Mn-eo3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1216,7 +1230,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcr-y0-kbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="RfB-Fm-TXz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4520" y="-682"/>
+            <point key="canvasLocation" x="5572" y="-722"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wTf-mt-wtZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qvB-YM-zkF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3in-Jk-0oc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="v57-x3-Bbn" kind="relationship" relationship="rootViewController" id="gYL-TZ-7bv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nJL-kq-ah6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2455" y="-722"/>
         </scene>
     </scenes>
     <resources>
@@ -1226,6 +1258,7 @@
         <image name="Project" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ed4-da-UxD"/>
         <segue reference="l41-gI-9b6"/>
         <segue reference="L42-lg-hKK"/>
     </inferredMetricsTieBreakers>

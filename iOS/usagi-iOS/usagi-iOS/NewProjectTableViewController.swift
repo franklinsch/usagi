@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewProjectTableViewController: UIViewController, UITableViewDelegate {
+class NewProjectTableViewController: UITableViewController {
 
     @IBOutlet weak var projectNameField: UITextField!
     @IBOutlet weak var projectManagerField: UITextField!
@@ -37,10 +37,6 @@ class NewProjectTableViewController: UIViewController, UITableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didPressDone(sender: AnyObject) {
-        navigationController?.popViewControllerAnimated(true)
-    }
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -52,6 +48,16 @@ class NewProjectTableViewController: UIViewController, UITableViewDelegate {
             
             destinationViewController.tasks = tasks
         }
+    }
+    
+    @IBAction func saveNewTasks(sender: UIStoryboardSegue) {
+        guard let sourceViewController = sender.sourceViewController as? AddTaskTableViewController else {
+            fatalError()
+        }
+        
+        tasks.appendContentsOf(sourceViewController.tasks)
+        tableView.reloadData()
+        
     }
 
 }
