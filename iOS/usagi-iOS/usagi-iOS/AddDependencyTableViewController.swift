@@ -9,6 +9,9 @@
 import UIKit
 
 class AddDependencyTableViewController: UITableViewController {
+    
+    var dependencies = [Project]()
+    var selectedDependencies = [Project]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,23 +32,35 @@ class AddDependencyTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return dependencies.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("dependencyCell", forIndexPath: indexPath)
+        cell.textLabel!.text = dependencies[indexPath.row].name
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let dependency = dependencies[indexPath.row]
+        
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+            if (cell.accessoryType == .Checkmark) {
+                cell.accessoryType = .None
+                if let index = selectedDependencies.indexOf({$0 === dependency}) {
+                    selectedDependencies.removeAtIndex(index)
+                }
+            } else {
+                cell.accessoryType = .Checkmark;
+                selectedDependencies.append(dependency)
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -92,13 +107,4 @@ class AddDependencyTableViewController: UITableViewController {
     }
     */
 
-    @IBAction func didPressDone(sender: UIStoryboardSegue) {
-        guard let sourceViewController = sender.sourceViewController as? NewTaskTableViewController else {
-            fatalError()
-        }
-        
-        let dependencies = [Project]()
-        
-        sourceViewController.dependencies = dependencies
-    }
 }

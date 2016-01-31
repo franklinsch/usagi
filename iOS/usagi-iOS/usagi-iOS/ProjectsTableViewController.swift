@@ -55,6 +55,21 @@ class ProjectsTableViewController: UITableViewController {
         return projectCell
     }
     
+    @IBAction func saveNewProject(sender: UIStoryboardSegue) {
+        guard let sourceViewController = sender.sourceViewController as? NewProjectTableViewController else {
+            fatalError()
+        }
+        
+        let newProject = Project(name: sourceViewController.projectNameField.text!, description: sourceViewController.descriptionField.text!, participants: [], subtasks: sourceViewController.tasks, progress: 0, timeLeft: "1h00")
+        
+        projects.append(newProject)
+        tableView.reloadData()
+    }
+    
+    @IBAction func cancelNewProject(sender: UIStoryboardSegue) {
+        
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

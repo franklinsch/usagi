@@ -13,6 +13,7 @@ class NewTaskTableViewController: UITableViewController {
     @IBOutlet var taskNameField: UITextField!
     @IBOutlet var projectNameField: UITextField!
     @IBOutlet var descriptionField: UITextField!
+    @IBOutlet var dependencyCount: UILabel!
     
     var tasks: [Project]!
     var dependencies = [Project]()
@@ -32,80 +33,30 @@ class NewTaskTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        dependencyCount.text = "\(dependencies.count) dependencies"
     }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return tasks.count
-    }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "addDependencySegue" {
+            guard let destinationViewController = segue.destinationViewController as? AddDependencyTableViewController else {
+                fatalError()
+            }
             
+            destinationViewController.dependencies = tasks
         }
     }
     
-    @IBAction func unwindToTaskList(sender: UIStoryboardSegue) {
-        guard let sourceViewController = sender.sourceViewController as? AddTaskTableViewController else {
+    @IBAction func addNewDependency(sender: UIStoryboardSegue) {
+        guard let sourceViewController = sender.sourceViewController as? AddDependencyTableViewController else {
             fatalError()
         }
         
-        let newTask = Project(name: taskNameField.text!, description: descriptionField.text!, participants: [], subtasks: [], progress: 0, timeLeft: "1h00", dependsOnTasks: dependencies)
-        
-        sourceViewController.tasks.append(newTask);
+        dependencies = sourceViewController.selectedDependencies
     }
-
 }
