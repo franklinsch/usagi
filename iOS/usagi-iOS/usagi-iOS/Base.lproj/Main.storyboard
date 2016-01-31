@@ -969,13 +969,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zxv-iF-9DX">
-                                                <rect key="frame" x="0.0" y="58" width="49" height="25"/>
+                                                <rect key="frame" x="0.0" y="58" width="58" height="25"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Phone" translatesAutoresizingMaskIntoConstraints="NO" id="fam-NK-AlX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="25"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Messages" translatesAutoresizingMaskIntoConstraints="NO" id="nxl-jz-hkT">
-                                                        <rect key="frame" x="24" y="0.0" width="25" height="25"/>
+                                                        <rect key="frame" x="33" y="0.0" width="25" height="25"/>
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
