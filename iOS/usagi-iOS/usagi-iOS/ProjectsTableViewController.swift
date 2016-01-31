@@ -49,22 +49,12 @@ class ProjectsTableViewController: UITableViewController {
         let project = projects[indexPath.row]
         projectCell.projectName.text = project.name
         projectCell.projectDescription.text = project.description
-        projectCell.project = project
-//        
-//        let participantPictures: [UIImage] = project.participants.flatMap({
-//            return $0.profilePicture
-//        })
-//
-//        guard let _participantsView = projectCell.participantsView.delegate as? ParticipantsCollectionViewController else {
-//            fatalError("Could not cast CollectionViewController to ParticipantsCollectionViewController")
-//        }
-//        
-//        _participantsView.participantPictures = participantPictures
+        
         projectCell.participantsCount.text = "\(project.participants.count)"
 
         return projectCell
     }
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

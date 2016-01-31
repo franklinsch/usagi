@@ -10,21 +10,6 @@ import UIKit
 
 class ProjectTableViewCell: UITableViewCell {
     
-    var project: Project? {
-        didSet {
-            if participantsView != nil {
-                guard let participantsListController = participantsView.dataSource as? ParticipantsCollectionViewController else {
-                    fatalError()
-                }
-                
-                participantsListController.participantPictures = self.project!.participants.flatMap({$0.profilePicture})
-                
-//                participantsListController.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "participantID")
-//                participantsListController.collectionView?.reloadData()
-            }
-        }
-    }
-    
     // Outlets
     @IBOutlet weak var projectName: UILabel!
     @IBOutlet weak var projectDescription: UILabel!
@@ -37,7 +22,6 @@ class ProjectTableViewCell: UITableViewCell {
         // Initialization code
         
         participantsCountBackgroundView.layer.cornerRadius = participantsCountBackgroundView.frame.width / 2
-        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
