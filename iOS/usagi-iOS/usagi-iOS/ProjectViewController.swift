@@ -45,11 +45,37 @@ class ProjectViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func requestParticipation(sender: AnyObject) {
+        let managerString = ", \(project!.manager!.name), " ?? ""
+        
+        let alertController = UIAlertController(title: "Request to work on \(project!.name)?", message: "The manager\(managerString)will have to approve your request", preferredStyle: .ActionSheet)
+        alertController.addAction(UIAlertAction(title: "Yes", style: .Default, handler: {_ in self.showRequestConfirmationAlert()}))
+        alertController.addAction(UIAlertAction(title: "Maybe Later", style: .Default, handler: {_ in }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: {_ in }))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func showRequestConfirmationAlert() {
+        let alertController = UIAlertController(title: "Request sent!", message: "\(project!.manager!.name) will take your request into consideration.", preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
 
     // MARK: - Navigation
 
 //    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "taskDetailSegue" {
+            guard let destinationViewController = segue.destinationViewController as? MyTaskViewontroller else {
+                fatalError()
+            }
+            if let row = tasksTableView.indexPathForCell(sender as! UITableViewCell)?.row {
+                let selectedTask = project?.subtasks[row]
+                destinationViewController.task = selectedTask
+            }
+        }
+    }
 
 }
