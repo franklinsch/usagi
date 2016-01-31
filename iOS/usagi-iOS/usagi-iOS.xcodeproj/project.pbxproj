@@ -14,6 +14,11 @@
 		2569951A1C5D7DF400B93473 /* trump.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 256995191C5D7DF400B93473 /* trump.jpeg */; };
 		2569951C1C5D7E3200B93473 /* lattner.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2569951B1C5D7E3200B93473 /* lattner.jpeg */; };
 		2569951E1C5D7FF700B93473 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569951D1C5D7FF700B93473 /* TasksTableViewController.swift */; };
+		256995201C5D935800B93473 /* ScrollingTabAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569951F1C5D935800B93473 /* ScrollingTabAnimation.swift */; };
+		256995301C5DBC9900B93473 /* NewProjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569952F1C5DBC9900B93473 /* NewProjectTableViewController.swift */; };
+		256995321C5DBD3800B93473 /* AddTaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256995311C5DBD3800B93473 /* AddTaskTableViewController.swift */; };
+		256995341C5DBD9E00B93473 /* NewTaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256995331C5DBD9E00B93473 /* NewTaskTableViewController.swift */; };
+		256995361C5DBDD400B93473 /* AddDependencyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256995351C5DBDD400B93473 /* AddDependencyTableViewController.swift */; };
 		25BD2FF81C5CEE1200D2E521 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD2FF71C5CEE1200D2E521 /* AppDelegate.swift */; };
 		25BD2FFD1C5CEE1200D2E521 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25BD2FFB1C5CEE1200D2E521 /* Main.storyboard */; };
 		25BD30001C5CEE1200D2E521 /* usagi_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25BD2FFE1C5CEE1200D2E521 /* usagi_iOS.xcdatamodeld */; };
@@ -37,6 +42,11 @@
 		256995191C5D7DF400B93473 /* trump.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trump.jpeg; sourceTree = "<group>"; };
 		2569951B1C5D7E3200B93473 /* lattner.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lattner.jpeg; sourceTree = "<group>"; };
 		2569951D1C5D7FF700B93473 /* TasksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
+		2569951F1C5D935800B93473 /* ScrollingTabAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingTabAnimation.swift; sourceTree = "<group>"; };
+		2569952F1C5DBC9900B93473 /* NewProjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectTableViewController.swift; sourceTree = "<group>"; };
+		256995311C5DBD3800B93473 /* AddTaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskTableViewController.swift; sourceTree = "<group>"; };
+		256995331C5DBD9E00B93473 /* NewTaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskTableViewController.swift; sourceTree = "<group>"; };
+		256995351C5DBDD400B93473 /* AddDependencyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDependencyTableViewController.swift; sourceTree = "<group>"; };
 		25BD2FF41C5CEE1100D2E521 /* usagi-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "usagi-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25BD2FF71C5CEE1200D2E521 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25BD2FFC1C5CEE1200D2E521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +83,17 @@
 			name = MyTasksView;
 			sourceTree = "<group>";
 		};
+		256995291C5DBC3400B93473 /* NewProjectView */ = {
+			isa = PBXGroup;
+			children = (
+				2569952F1C5DBC9900B93473 /* NewProjectTableViewController.swift */,
+				256995311C5DBD3800B93473 /* AddTaskTableViewController.swift */,
+				256995331C5DBD9E00B93473 /* NewTaskTableViewController.swift */,
+				256995351C5DBDD400B93473 /* AddDependencyTableViewController.swift */,
+			);
+			name = NewProjectView;
+			sourceTree = "<group>";
+		};
 		25BD2FEB1C5CEE1100D2E521 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +113,7 @@
 		25BD2FF61C5CEE1200D2E521 /* usagi-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				256995291C5DBC3400B93473 /* NewProjectView */,
 				25BD2FF71C5CEE1200D2E521 /* AppDelegate.swift */,
 				25BD2FFB1C5CEE1200D2E521 /* Main.storyboard */,
 				256995141C5D6DBD00B93473 /* MyTasksView */,
@@ -115,6 +137,7 @@
 				25DE8DD41C5D0B91007D4BA0 /* MinimalTaskTableViewController.swift */,
 				25DE8DCD1C5D0247007D4BA0 /* ParticipantsCollectionViewController.swift */,
 				25DE8DB91C5CF9AD007D4BA0 /* ProjectTableViewCell.swift */,
+				2569951F1C5D935800B93473 /* ScrollingTabAnimation.swift */,
 			);
 			name = ProjectsView;
 			sourceTree = "<group>";
@@ -238,13 +261,18 @@
 				25DE8DBA1C5CF9AD007D4BA0 /* ProjectTableViewCell.swift in Sources */,
 				25BD2FF81C5CEE1200D2E521 /* AppDelegate.swift in Sources */,
 				25DE8DD51C5D0B91007D4BA0 /* MinimalTaskTableViewController.swift in Sources */,
+				256995201C5D935800B93473 /* ScrollingTabAnimation.swift in Sources */,
 				25DE8DC01C5CFA95007D4BA0 /* User.swift in Sources */,
+				256995301C5DBC9900B93473 /* NewProjectTableViewController.swift in Sources */,
 				25DE8DD11C5D095D007D4BA0 /* ProjectViewController.swift in Sources */,
 				2569951E1C5D7FF700B93473 /* TasksTableViewController.swift in Sources */,
+				256995321C5DBD3800B93473 /* AddTaskTableViewController.swift in Sources */,
 				25DE8DBE1C5CFA6E007D4BA0 /* Project.swift in Sources */,
 				256995161C5D6DDA00B93473 /* MyTaskViewController.swift in Sources */,
 				25DE8DC41C5CFCAA007D4BA0 /* ProjectsTableViewController.swift in Sources */,
 				25DE8DCE1C5D0247007D4BA0 /* ParticipantsCollectionViewController.swift in Sources */,
+				256995361C5DBDD400B93473 /* AddDependencyTableViewController.swift in Sources */,
+				256995341C5DBD9E00B93473 /* NewTaskTableViewController.swift in Sources */,
 				256995131C5D5C2400B93473 /* MockData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

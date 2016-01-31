@@ -16,8 +16,9 @@ class Project {
     var dependsOnTasks = [Project]()
     var progress: Int
     var timeLeft: String
+    var manager: User?
     
-    init(name: String, description: String, participants: [User], subtasks: [Project], progress: Int, timeLeft: String, dependsOnTasks: [Project] = []) {
+    init(name: String, description: String, participants: [User], subtasks: [Project], progress: Int, timeLeft: String, dependsOnTasks: [Project] = [], manager: User? = nil) {
         self.name = name
         self.description = description
         self.participants = participants
@@ -25,5 +26,6 @@ class Project {
         self.progress = progress
         self.timeLeft = timeLeft
         self.dependsOnTasks = dependsOnTasks
+        self.manager = manager
     }
 }

@@ -60,7 +60,20 @@ class MyTaskViewontroller: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func requestParticipation(sender: AnyObject) {
+        let alertController = UIAlertController(title: "Request to work on \(task!.name)?", message: "The manager will have to approve your request", preferredStyle: .ActionSheet)
+        alertController.addAction(UIAlertAction(title: "Yes", style: .Default, handler: {_ in self.showRequestConfirmationAlert()}))
+        alertController.addAction(UIAlertAction(title: "Maybe Later", style: .Default, handler: {_ in }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: {_ in }))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func showRequestConfirmationAlert() {
+        let alertController = UIAlertController(title: "Request sent!", message: "The manager will take your request into consideration.", preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

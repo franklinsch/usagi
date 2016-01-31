@@ -51,7 +51,6 @@ class ParticipantsCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        print(participantPictures.count)
         return participantPictures.count
     }
 
