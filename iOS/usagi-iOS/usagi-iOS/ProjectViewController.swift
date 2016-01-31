@@ -46,7 +46,7 @@ class ProjectViewController: UIViewController {
     }
     
     @IBAction func requestParticipation(sender: AnyObject) {
-        let managerString = ", \(project!.manager!.name), " ?? ""
+        let managerString = ", \(project?.manager?.name), " ?? ""
         
         let alertController = UIAlertController(title: "Request to work on \(project!.name)?", message: "The manager\(managerString)will have to approve your request", preferredStyle: .ActionSheet)
         alertController.addAction(UIAlertAction(title: "Yes", style: .Default, handler: {_ in self.showRequestConfirmationAlert()}))
