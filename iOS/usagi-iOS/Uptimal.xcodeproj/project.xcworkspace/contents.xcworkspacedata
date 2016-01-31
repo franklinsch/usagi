@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:usagi-iOS.xcodeproj">
+      location = "self:/Users/franklinschrans/github/usagi/iOS/usagi-iOS/Uptimal.xcodeproj">
    </FileRef>
 </Workspace>
