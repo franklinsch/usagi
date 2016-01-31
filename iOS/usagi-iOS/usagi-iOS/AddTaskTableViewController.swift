@@ -10,6 +10,7 @@ import UIKit
 
 class AddTaskTableViewController: UITableViewController {
     
+    var projectName: String?
     var tasks = [Project]()
 
     override func viewDidLoad() {
@@ -103,6 +104,7 @@ class AddTaskTableViewController: UITableViewController {
                 fatalError()
             }
             
+            destinationViewController.projectName = projectName
             destinationViewController.tasks = tasks
         }
     }

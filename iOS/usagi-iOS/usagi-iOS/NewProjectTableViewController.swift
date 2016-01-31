@@ -47,6 +47,7 @@ class NewProjectTableViewController: UITableViewController {
             }
             
             destinationViewController.tasks = tasks
+            destinationViewController.projectName = projectNameField.text
         }
     }
     
@@ -57,7 +58,6 @@ class NewProjectTableViewController: UITableViewController {
         
         tasks.appendContentsOf(sourceViewController.tasks)
         tableView.reloadData()
-        
     }
 
 }

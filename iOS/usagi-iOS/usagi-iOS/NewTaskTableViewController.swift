@@ -15,6 +15,8 @@ class NewTaskTableViewController: UITableViewController {
     @IBOutlet var descriptionField: UITextField!
     @IBOutlet var dependencyCount: UILabel!
     
+    var projectName: String?
+    
     var tasks: [Project]!
     var dependencies = [Project]()
 
@@ -26,6 +28,10 @@ class NewTaskTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        if let name = projectName {
+            projectNameField.text = name
+        }
     }
 
     override func didReceiveMemoryWarning() {

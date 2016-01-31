@@ -457,7 +457,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="jcT-1g-I0v" kind="show" id="ed4-da-UxD">
+                                            <segue destination="jcT-1g-I0v" kind="show" identifier="addTaskSegue" id="ed4-da-UxD">
                                                 <segue key="commit" inheritsFrom="parent" id="Ppm-ZF-GxE"/>
                                                 <segue key="preview" inheritsFrom="commit" id="EZe-Cc-jQp"/>
                                             </segue>
