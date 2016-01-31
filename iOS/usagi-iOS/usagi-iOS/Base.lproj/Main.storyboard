@@ -47,9 +47,9 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUb-C2-5xg">
                                             <rect key="frame" x="562" y="20" width="30" height="30"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rC-QW-4k4">
-                                                    <rect key="frame" x="7.5" y="-0.5" width="14.5" height="31"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rC-QW-4k4">
+                                                    <rect key="frame" x="9.5" y="4.5" width="11" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="0.95970394739999998" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -608,8 +608,8 @@
                                                     <rect key="frame" x="522" y="10" width="30" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hF-VA-npz">
-                                                            <rect key="frame" x="8.5" y="3" width="12.5" height="24"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <rect key="frame" x="9.5" y="4.5" width="11" height="21.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="textColor" red="0.95970394739999998" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1032,10 +1032,10 @@
             </objects>
             <point key="canvasLocation" x="768" y="-15"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="S4M-nB-KVf">
             <objects>
-                <viewController id="5u1-nE-Lvn" sceneMemberID="viewController">
+                <viewController id="5u1-nE-Lvn" customClass="LoginViewController" customModule="usagi_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="b3g-La-uGu"/>
                         <viewControllerLayoutGuide type="bottom" id="4sS-0O-nJh"/>
@@ -1104,6 +1104,12 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="descLabel" destination="Kdt-xG-H5V" id="GBU-mU-Fe5"/>
+                        <outlet property="loginButton" destination="ftm-v4-hP5" id="bKr-IE-1zi"/>
+                        <outlet property="uptimalLogo" destination="HUD-Wo-l86" id="1cQ-jR-vGg"/>
+                        <outlet property="welcomeLabel" destination="cDL-P8-1iH" id="X0p-KT-BO4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6i-Zp-4hZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
