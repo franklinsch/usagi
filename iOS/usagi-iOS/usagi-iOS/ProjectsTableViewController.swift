@@ -20,6 +20,7 @@ class ProjectsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,6 +65,26 @@ class ProjectsTableViewController: UITableViewController {
         
         projects.append(newProject)
         tableView.reloadData()
+        
+        delay(seconds: 0.0, completion: {
+            SwiftSpinner.show("Uploading to server")
+        })
+        
+        delay(seconds: 1.0, completion: {
+            SwiftSpinner.show("Allocating tasks")
+        })
+        
+        delay(seconds: 2.0, completion: {
+            SwiftSpinner.show("Optimizing deadlines")
+        })
+        
+        delay(seconds: 4.0, completion: {
+            SwiftSpinner.show("Retrieving data")
+        })
+        
+        delay(seconds: 5.0, completion: {
+            SwiftSpinner.hide()
+        })
     }
     
     @IBAction func cancelNewProject(sender: UIStoryboardSegue) {
@@ -118,6 +139,14 @@ class ProjectsTableViewController: UITableViewController {
                 let selectedProject = projects[row]
                 projectViewController.project = selectedProject
             }
+        }
+    }
+    
+    func delay(seconds seconds: Double, completion:()->()) {
+        let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64( Double(NSEC_PER_SEC) * seconds ))
+        
+        dispatch_after(popTime, dispatch_get_main_queue()) {
+            completion()
         }
     }
 }

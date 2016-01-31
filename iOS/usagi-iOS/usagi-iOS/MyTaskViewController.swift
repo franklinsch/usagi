@@ -49,6 +49,7 @@ class MyTaskViewontroller: UIViewController {
         if task.dependsOnTasks.count > 0 {
             dependentTasksText.text = task.dependsOnTasks.map({$0.name}).joinWithSeparator(",\n")
             resumeTaskButton.enabled = false
+            dependentTasksStackView.hidden = false
         } else {
             resumeTaskButton.enabled = true
             dependentTasksStackView.hidden = true

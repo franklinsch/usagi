@@ -19,6 +19,7 @@
 		256995321C5DBD3800B93473 /* AddTaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256995311C5DBD3800B93473 /* AddTaskTableViewController.swift */; };
 		256995341C5DBD9E00B93473 /* NewTaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256995331C5DBD9E00B93473 /* NewTaskTableViewController.swift */; };
 		256995361C5DBDD400B93473 /* AddDependencyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256995351C5DBDD400B93473 /* AddDependencyTableViewController.swift */; };
+		256995381C5DF22600B93473 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256995371C5DF22600B93473 /* SwiftSpinner.swift */; };
 		25BD2FF81C5CEE1200D2E521 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD2FF71C5CEE1200D2E521 /* AppDelegate.swift */; };
 		25BD2FFD1C5CEE1200D2E521 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25BD2FFB1C5CEE1200D2E521 /* Main.storyboard */; };
 		25BD30001C5CEE1200D2E521 /* usagi_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25BD2FFE1C5CEE1200D2E521 /* usagi_iOS.xcdatamodeld */; };
@@ -47,6 +48,7 @@
 		256995311C5DBD3800B93473 /* AddTaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskTableViewController.swift; sourceTree = "<group>"; };
 		256995331C5DBD9E00B93473 /* NewTaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskTableViewController.swift; sourceTree = "<group>"; };
 		256995351C5DBDD400B93473 /* AddDependencyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDependencyTableViewController.swift; sourceTree = "<group>"; };
+		256995371C5DF22600B93473 /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
 		25BD2FF41C5CEE1100D2E521 /* usagi-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "usagi-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25BD2FF71C5CEE1200D2E521 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25BD2FFC1C5CEE1200D2E521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				25DE8DCD1C5D0247007D4BA0 /* ParticipantsCollectionViewController.swift */,
 				25DE8DB91C5CF9AD007D4BA0 /* ProjectTableViewCell.swift */,
 				2569951F1C5D935800B93473 /* ScrollingTabAnimation.swift */,
+				256995371C5DF22600B93473 /* SwiftSpinner.swift */,
 			);
 			name = ProjectsView;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				2569951E1C5D7FF700B93473 /* TasksTableViewController.swift in Sources */,
 				256995321C5DBD3800B93473 /* AddTaskTableViewController.swift in Sources */,
 				25DE8DBE1C5CFA6E007D4BA0 /* Project.swift in Sources */,
+				256995381C5DF22600B93473 /* SwiftSpinner.swift in Sources */,
 				256995161C5D6DDA00B93473 /* MyTaskViewController.swift in Sources */,
 				25DE8DC41C5CFCAA007D4BA0 /* ProjectsTableViewController.swift in Sources */,
 				25DE8DCE1C5D0247007D4BA0 /* ParticipantsCollectionViewController.swift in Sources */,
