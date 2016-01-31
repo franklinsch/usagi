@@ -3,7 +3,6 @@ package com.example.usagi;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
-import com.googlecode.objectify.annotation.Parent;
 import com.googlecode.objectify.Key;
 
 import java.lang.String;
@@ -25,23 +24,12 @@ import com.googlecode.objectify.ObjectifyService;
  **/
 @Entity
 public class Milestone {
-  @Parent Key<Project> owner;
   @Id public Long id;
 
   public List<Activity> nextActivities;
-  public int identification;
-
-  public Milestone() {
-
-  }
-
-  public Milestone(String projectName) {
-    this.owner = Key.create(Project.class, projectName);
-  }
+  public Long timeSinceStart;
 
   public void save() {
-    System.out.println("About to save milestone");
     ObjectifyService.ofy().save().entity(this).now();
-    System.out.println("Saved milestone");
   }
 }
