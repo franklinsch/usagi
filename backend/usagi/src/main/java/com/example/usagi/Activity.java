@@ -1,16 +1,11 @@
 package com.example.usagi;
 
-import com.googlecode.objectify.annotation.Entity;
-import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
-import com.googlecode.objectify.annotation.Parent;
-import com.googlecode.objectify.Key;
+import com.googlecode.objectify.Ref;
 
 import java.lang.String;
 import java.util.Date;
 import java.util.List;
-
-import com.googlecode.objectify.ObjectifyService;
 
 /**
  * The @Entity tells Objectify about our entity.  We also register it in {@link OfyHelper}
@@ -23,27 +18,19 @@ import com.googlecode.objectify.ObjectifyService;
  *
  * NOTE - all the properties are PUBLIC so that can keep the code simple.
  **/
-@Entity
 public class Activity {
-  @Parent Key<Milestone> source;
-  @Id public Long id;
-
-  public Milestone destination;
+  public Ref<Milestone> destination;
   public String name;
   public Long duration;
 
-  public Activity() {
+  public Activity(String name, Long duration) {
+    Milestone destination = new Milestone();
+    destination.save();
 
-  }
-
-  public Activity(String projectName, String name, Long duration) {
-    this.destination = new Milestone(projectName);
+    this.destination = Ref.create(destination);
     this.name = name;
     this.duration = duration;
-  }
 
-  public void save() {
-    destination.save();
-    ObjectifyService.ofy().save().entity(this).now();
+    System.out.println("Creating activity with name: '" + name + "'; duration: '" + duration + "'");
   }
 }

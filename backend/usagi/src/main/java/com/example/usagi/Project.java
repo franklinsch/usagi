@@ -3,8 +3,7 @@ package com.example.usagi;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
-import com.googlecode.objectify.annotation.Parent;
-import com.googlecode.objectify.Key;
+import com.googlecode.objectify.Ref;
 
 import java.lang.String;
 import java.util.Date;
@@ -29,49 +28,32 @@ public class Project {
   @Id public Long id;
 
   public String name;
-  public Milestone start;
-  public Milestone end;
+  public List<Ref<SubProject>> subProjects;
 
   public Project() {}
   public Project(String name) {
+    SubProject subProject = new SubProject(name);
+    subProject.save();
+
+    subProjects = new ArrayList<SubProject>();  
+    subProjects.add(Ref.create(subProject));
     this.name = name;
-    this.start = new Milestone(name);
-    //this.end = this.start;
-    System.out.println("Init values for project");
   }
 
   public void save() {
-    System.out.println("About to save project");
     ObjectifyService.ofy().save().entity(this).now();
-    System.out.println("Saved project");
   }
 
-  public void addActivity(String activityName, Long duration, List<Activity> dependencies) {
-    Activity newActivity = new Activity(name, activityName, duration);
-    for (Activity activity: dependencies) {
-      activity.destination.nextActivities.add(newActivity);
-    }
-  }
-
-  public Long calculateLongestPath(Milestone start, 
-                                   List<Activity> activityPath) {
-    if (start == end) {
-      return new Long(0);
-    }
-
-    Long max = new Long(0);
-    List<Activity> activityPathClone = new ArrayList<Activity>(activityPath);
-
-    for (Activity activity: start.nextActivities) {
-      Long pathLength = calculateLongestPath(activity.destination,
-                                             activityPath);
-      if (pathLength > max) {
-        max = pathLength;
-      } else {
-        activityPath = activityPathClone;
+  public void insertActivity(String activityName, Long duration) {
+    Activity newActivity = new Activity(activityName, duration);
+    for (Ref<SubProject> ref: subProjects) {
+      SubProject subProject = ref.get();
+      if (subProject.insertActivity(newActivity)) {
+        return;
       }
     }
-
-    return max;
+    Subproject newSubProject = new SubProject(activityName);
+    newSubProject.insertActivity(newActivity);
+    subProjects.add(newSubProject);
   }
 }

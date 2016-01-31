@@ -36,13 +36,12 @@ public class UsagiServlet extends HttpServlet {
     String hack = req.getParameter("hack");
 
     if (hack.equals("addTask")) {
-      String taskName = req.getParameter("taskName");
+      String activityName = req.getParameter("activityName");
       Long duration = Long.parseLong(req.getParameter("duration"));
       //if (user != null) {
       //} else {
       //}
-      Activity newActivity = new Activity(projectName, taskName, duration);
-      newActivity.save();
+      Activity newActivity = new Activity(activityName, duration);
     } else if (hack.equals("createProject")) {
       Project newProject = new Project(projectName);
       newProject.save();
