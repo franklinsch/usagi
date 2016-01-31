@@ -21,15 +21,6 @@ class ProjectsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        let url = NSURL(string: "https://hackcambridge-3218.appspot.com")
-        
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
-            if let _data = data {
-                print(NSString(data: _data, encoding: NSUTF8StringEncoding))
-            }
-        }
-        
-        task.resume()
     }
 
     override func didReceiveMemoryWarning() {
