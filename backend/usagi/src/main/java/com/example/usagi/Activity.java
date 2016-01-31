@@ -24,6 +24,8 @@ public class Activity {
   public String name;
   public Long duration;
 
+  public Activity() {}
+
   public Activity(String name, Long duration, Milestone source, Milestone destination) {
     this.source = Ref.create(source);
     this.destination = Ref.create(destination);
