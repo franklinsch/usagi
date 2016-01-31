@@ -5,10 +5,12 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Queue" %>
 <%@ page import="java.util.ArrayDeque" %>
-<%@ page import="com.example.usagi.Project" %>
-<%@ page import="com.example.usagi.Milestone" %>
 <%@ page import="com.example.usagi.Activity" %>
+<%@ page import="com.example.usagi.Milestone" %>
+<%@ page import="com.example.usagi.Project" %>
+<%@ page import="com.example.usagi.SubProject" %>
 <%@ page import="com.googlecode.objectify.Key" %>
+<%@ page import="com.googlecode.objectify.Ref" %>
 <%@ page import="com.googlecode.objectify.ObjectifyService" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
@@ -32,17 +34,16 @@
         .now();
 
       if (project != null) {
-        Queue<Milestone> queue = new ArrayDeque<Milestone>();
-        queue.add(project.start.get());
-        while (queue.size() != 0) {
-          Milestone milestone = queue.remove();
-          pageContext.setAttribute("source", milestone);
-          for (Activity activity: milestone.nextActivities) {
-            pageContext.setAttribute("activity", activity);
-%>
-<p>${fn:escapeXml(source)} ${fn:escapeXml(activity)} ${fn:escapeXml(activity.destination)}<\p>
-<%
-            queue.add(activity.destination.get());
+        for (Ref<SubProject> ref: project.subProjects) {
+          SubProject subProject = ref.get();
+          Queue<Milestone> queue = new ArrayDeque<Milestone>();
+          queue.add(subProject.start.get());
+          while (queue.size() != 0) {
+            Milestone milestone = queue.remove();
+            for (Activity activity: milestone.nextActivities) {
+              System.out.println(milestone.id + "->" + activity.name + "->" + activity.destination.get().id);
+              queue.add(activity.destination.get());
+            }
           }
         }
       }
@@ -64,16 +65,6 @@
     to include your name with greetings you post.</p>
 <%
     }
-
-    Key<Project> theProject = Key.create(Project.class, projectName);
-
-    List<Milestone> milestones = ObjectifyService.ofy()
-          .load()
-          .type(Milestone.class)
-          .ancestor(theProject)
-          .limit(1)           
-          .list();
-    int size = milestones.size();
 %>
 
 <form action="/usagi" method="post">
@@ -81,7 +72,6 @@
     <div><input type="text" name="activityName" placeholder="Activity Name"></div>
     <div><input type="text" name="duration" placeholder="Duration"></div>
     <div><input type="submit" value="Add Task"/></div>
-    <input type="hidden" name="project" value="${fn:escapeXml(project)}"/>
     <input type="hidden" name="hack" value="addTask"/>
 </form>
 <form action="/usagi" method="post">

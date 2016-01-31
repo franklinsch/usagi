@@ -9,6 +9,10 @@ import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
 
+import com.googlecode.objectify.ObjectifyService;
+
+import java.util.List;
+
 import java.io.IOException;
 import java.util.Date;
 
@@ -34,6 +38,7 @@ public class UsagiServlet extends HttpServlet {
 
     String projectName = req.getParameter("projectName");
     String hack = req.getParameter("hack");
+    Project project = ObjectifyService.ofy().load().type(Project.class).filter("name", projectName).first().now();
 
     if (hack.equals("addTask")) {
       String activityName = req.getParameter("activityName");
@@ -41,7 +46,7 @@ public class UsagiServlet extends HttpServlet {
       //if (user != null) {
       //} else {
       //}
-      Activity newActivity = new Activity(activityName, duration);
+      project.insertActivity(activityName, duration);
     } else if (hack.equals("createProject")) {
       Project newProject = new Project(projectName);
       newProject.save();

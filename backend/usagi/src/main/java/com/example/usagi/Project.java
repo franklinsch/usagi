@@ -27,7 +27,7 @@ import com.googlecode.objectify.ObjectifyService;
 public class Project {
   @Id public Long id;
 
-  public String name;
+  @Index public String name;
   public List<Ref<SubProject>> subProjects;
 
   public Project() {}
@@ -35,7 +35,7 @@ public class Project {
     SubProject subProject = new SubProject(name);
     subProject.save();
 
-    subProjects = new ArrayList<SubProject>();  
+    subProjects = new ArrayList<Ref<SubProject>>();  
     subProjects.add(Ref.create(subProject));
     this.name = name;
   }
@@ -45,15 +45,40 @@ public class Project {
   }
 
   public void insertActivity(String activityName, Long duration) {
-    Activity newActivity = new Activity(activityName, duration);
-    for (Ref<SubProject> ref: subProjects) {
-      SubProject subProject = ref.get();
-      if (subProject.insertActivity(newActivity)) {
-        return;
-      }
+    Milestone source = new Milestone();
+    source.save();
+    SubProject subProject = new SubProject(activityName);
+    subProject.save();
+    subProjects.add(Ref.create(subProject));
+    insertActivity(activityName, duration, source, subProject);
+  }
+
+  public void insertActivity(String activityName, Long duration, Milestone source, SubProject sourceProject, Milestone destination, SubProject destProject) {
+    sourceProject.calculatedSinceLastUpdate = false;
+    destProject.calculatedSinceLastUpdate = false;
+    Activity newActivity = new Activity(activityName, duration, source, destination);
+    source.nextActivities.add(newActivity);
+    source.save();
+    if (source == sourceProject.start.get() && 
+        destination == destProject.end.get()) {
+      destProject.end = sourceProject.end;
+      subProjects.remove(Ref.create(sourceProject));
+      ObjectifyService.ofy().delete().entity(sourceProject);
+    } else if (source == sourceProject.end.get() &&
+               destination == destProject.start.get()) {
+      sourceProject.end = destProject.end;
+      subProjects.remove(Ref.create(destProject));
+      ObjectifyService.ofy().delete().entity(destProject);
     }
-    Subproject newSubProject = new SubProject(activityName);
-    newSubProject.insertActivity(newActivity);
-    subProjects.add(newSubProject);
+  }
+
+  public void insertActivity(String activityName, Long duration, Milestone source, SubProject subProject) {
+    subProject.calculatedSinceLastUpdate = false;
+    Milestone destination = new Milestone();
+    destination.save();
+    Activity newActivity = new Activity(activityName, duration, source, destination);
+    source.nextActivities.add(newActivity);
+    source.save();
+    System.out.println("Added: " + newActivity.name);
   }
 }
