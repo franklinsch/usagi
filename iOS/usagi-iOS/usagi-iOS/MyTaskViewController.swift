@@ -21,6 +21,8 @@ class MyTaskViewontroller: UIViewController {
     
     @IBOutlet weak var resumeTaskButton: UIButton!
     
+    var timerRunning = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -70,6 +72,15 @@ class MyTaskViewontroller: UIViewController {
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
+    @IBAction func didPressResumeTask(sender: AnyObject) {
+        if timerRunning {
+            resumeTaskButton.setTitle("Pause task", forState: .Normal)
+        } else {
+            resumeTaskButton.setTitle("Resume task", forState: .Normal)
+        }
+        timerRunning = !timerRunning
+    }
+    
     func showRequestConfirmationAlert() {
         let alertController = UIAlertController(title: "Request sent!", message: "The manager will take your request into consideration.", preferredStyle: .Alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
@@ -87,5 +98,14 @@ class MyTaskViewontroller: UIViewController {
             destinationViewController.projects = MockData.availableTasks
         }
     }
-
+    
+    @IBAction func didPressFinishTask(sender: AnyObject) {
+        let alertController = UIAlertController(title: "Finished task?", message: "Are you sure you want to make this task as complete?", preferredStyle: .Alert)
+        
+        alertController.addAction(UIAlertAction(title: "Yes", style: .Destructive, handler: nil))
+        alertController.addAction(UIAlertAction(title: "No", style: .Default, handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
 }
