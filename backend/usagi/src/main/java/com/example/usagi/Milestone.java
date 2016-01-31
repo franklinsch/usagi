@@ -8,6 +8,7 @@ import com.googlecode.objectify.Key;
 import java.lang.String;
 import java.util.Date;
 import java.util.List;
+import java.util.ArrayList;
 
 import com.googlecode.objectify.ObjectifyService;
 
@@ -27,7 +28,11 @@ public class Milestone {
   @Id public Long id;
 
   public List<Activity> nextActivities;
-  public Long timeSinceStart;
+  public Long timeSinceStart = new Long(0);
+
+  public Milestone() {
+    nextActivities = new ArrayList<Activity>();
+  }
 
   public void save() {
     ObjectifyService.ofy().save().entity(this).now();

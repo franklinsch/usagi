@@ -27,7 +27,7 @@ import com.googlecode.objectify.ObjectifyService;
 public class SubProject {
   @Id public Long id;
 
-  private boolean calculatedSinceLastUpdate;
+  public boolean calculatedSinceLastUpdate;
 
   public String name;
   public Ref<Milestone> start;
@@ -53,27 +53,26 @@ public class SubProject {
       return end.get().timeSinceStart;
     }
 
-    if (start == end) {
+    if (start == end.get()) {
+      calculatedSinceLastUpdate = true;
       return new Long(0);
     }
 
     Long max = new Long(0);
-    List<Activity> activityPathClone = new ArrayList<Activity>(activityPath);
+    List<Activity> activityPathBase = new ArrayList<Activity>(activityPath);
 
     for (Activity activity: start.nextActivities) {
-      //activity.destination += 
-      Long pathLength = calculateLongestPath(activity.destination, activityPath);
+      Milestone dest = activity.destination.get();
+      dest.timeSinceStart = Math.max(dest.timeSinceStart, activity.duration + start.timeSinceStart);
+      List<Activity> activityPathClone = new ArrayList<Activity>(activityPathBase);
+      Long pathLength = calculateLongestPath(dest, activityPathClone) + activity.duration;
       if (pathLength > max) {
         max = pathLength;
-      } else {
         activityPath = activityPathClone;
+        activityPath.add(0, activity);
       }
     }
     
     return max;
-  }
-  
-  public void insertActivity(Activity newActivity) {
-    
   }
 }

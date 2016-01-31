@@ -19,18 +19,15 @@ import java.util.List;
  * NOTE - all the properties are PUBLIC so that can keep the code simple.
  **/
 public class Activity {
+  public Ref<Milestone> source;
   public Ref<Milestone> destination;
   public String name;
   public Long duration;
 
-  public Activity(String name, Long duration) {
-    Milestone destination = new Milestone();
-    destination.save();
-
+  public Activity(String name, Long duration, Milestone source, Milestone destination) {
+    this.source = Ref.create(source);
     this.destination = Ref.create(destination);
     this.name = name;
     this.duration = duration;
-
-    System.out.println("Creating activity with name: '" + name + "'; duration: '" + duration + "'");
   }
 }
