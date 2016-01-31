@@ -405,6 +405,7 @@
                                             <outlet property="participantsCountBackgroundView" destination="XrQ-fc-Ngx" id="Bfe-c8-ope"/>
                                             <outlet property="projectDescription" destination="rmJ-wB-28n" id="yFF-NK-HHk"/>
                                             <outlet property="projectName" destination="aMp-YP-CHV" id="TuO-xX-X87"/>
+                                            <segue destination="FFK-y7-TIa" kind="show" id="Djp-ko-Xdy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -417,6 +418,22 @@
                                 <rect key="frame" x="152" y="254.5" width="295" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" red="0.27852746210000001" green="0.27852746210000001" blue="0.27852746210000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3DI-Mi-GaA">
+                                <rect key="frame" x="20" y="156.5" width="560" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="lA4-8c-xbc"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="W5z-5a-OFh">
+                                <rect key="frame" x="20" y="137" width="144" height="19.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J0r-au-ZCU">
@@ -443,26 +460,10 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="O8V-LL-v42" id="3gh-jo-ROi"/>
-                                    <outlet property="delegate" destination="O8V-LL-v42" id="rP5-f9-gET"/>
+                                    <outlet property="dataSource" destination="Gah-zD-sbo" id="POT-hJ-6H9"/>
+                                    <outlet property="delegate" destination="Gah-zD-sbo" id="afU-gR-7bw"/>
                                 </connections>
                             </collectionView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3DI-Mi-GaA">
-                                <rect key="frame" x="20" y="156.5" width="560" height="90"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="lA4-8c-xbc"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="W5z-5a-OFh">
-                                <rect key="frame" x="20" y="137" width="144" height="19.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -494,10 +495,141 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5by-Iz-cNj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="O8V-LL-v42" customClass="ParticipantsCollectionViewController" customModule="usagi_iOS" customModuleProvider="target"/>
+                <customObject id="Gah-zD-sbo" customClass="ParticipantsCollectionViewController" customModule="usagi_iOS" customModuleProvider="target"/>
                 <customObject id="vFp-hY-CLR" customClass="ProjectsTableViewController" customModule="usagi_iOS" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="2275" y="-15"/>
+        </scene>
+        <!--My Task Viewontroller-->
+        <scene sceneID="H3Y-ah-U8E">
+            <objects>
+                <viewController id="FFK-y7-TIa" customClass="MyTaskViewontroller" customModule="usagi_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u8E-nq-nMu"/>
+                        <viewControllerLayoutGuide type="bottom" id="9O0-Uj-2oM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aHe-jm-On6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Refactor timer_interrupt" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rU-5M-A37">
+                                <rect key="frame" x="20" y="79" width="550" height="32.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completion: 77%     Est. time remaining: 1h30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0E-W7-QfH">
+                                <rect key="frame" x="154" y="131" width="291" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" red="0.27852746210000001" green="0.27852746210000001" blue="0.27852746210000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nXA-XJ-lqX">
+                                <rect key="frame" x="20" y="249.5" width="560" height="108.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7d3-Ws-rI7">
+                                <rect key="frame" x="20" y="230" width="125" height="19.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nV8-NQ-LOF">
+                                <rect key="frame" x="20" y="156" width="560" height="55"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="MLw-UK-RDk"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="aHY-HQ-stc">
+                                    <size key="itemSize" width="45" height="45"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="participantID" id="JDM-70-qev">
+                                        <rect key="frame" x="0.0" y="5" width="45" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="6Od-UE-Gp1" id="P1z-Ub-vrD"/>
+                                    <outlet property="delegate" destination="6Od-UE-Gp1" id="xDc-as-kKg"/>
+                                </connections>
+                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SUI-1u-Keo">
+                                <rect key="frame" x="160" y="408" width="280.5" height="53.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This task requires " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ve-n5-Mb4">
+                                        <rect key="frame" x="81" y="0.0" width="118.5" height="17"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <color key="textColor" red="0.27852746210000001" green="0.27852746210000001" blue="0.27852746210000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Use external interrupts for waiting&quot;  " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saD-vr-f4t">
+                                        <rect key="frame" x="0.0" y="17" width="280.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" red="0.27852746210000001" green="0.27852746210000001" blue="0.27852746210000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to be completed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CV-N7-wbX">
+                                        <rect key="frame" x="87" y="36" width="105.5" height="17"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <color key="textColor" red="0.27852746210000001" green="0.27852746210000001" blue="0.27852746210000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0b-3m-H9B">
+                                <rect key="frame" x="200" y="479" width="200" height="38"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Request participation"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="F0b-3m-H9B" firstAttribute="top" secondItem="SUI-1u-Keo" secondAttribute="bottom" constant="17" id="3c1-VS-NWb"/>
+                            <constraint firstItem="nXA-XJ-lqX" firstAttribute="top" secondItem="7d3-Ws-rI7" secondAttribute="bottom" id="6uh-hy-pEO"/>
+                            <constraint firstItem="7d3-Ws-rI7" firstAttribute="top" secondItem="nV8-NQ-LOF" secondAttribute="bottom" constant="19" id="Azv-96-XrA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nV8-NQ-LOF" secondAttribute="trailing" id="ExC-OH-JXU"/>
+                            <constraint firstItem="f0E-W7-QfH" firstAttribute="top" secondItem="9rU-5M-A37" secondAttribute="bottom" constant="20" id="Hpk-0m-WSl"/>
+                            <constraint firstItem="F0b-3m-H9B" firstAttribute="centerX" secondItem="aHe-jm-On6" secondAttribute="centerX" id="ORt-eh-MEm"/>
+                            <constraint firstItem="SUI-1u-Keo" firstAttribute="top" secondItem="nXA-XJ-lqX" secondAttribute="bottom" constant="50.5" id="SLD-yO-3t2"/>
+                            <constraint firstItem="SUI-1u-Keo" firstAttribute="centerX" secondItem="aHe-jm-On6" secondAttribute="centerX" id="UUx-Xy-e8N"/>
+                            <constraint firstItem="9rU-5M-A37" firstAttribute="leading" secondItem="aHe-jm-On6" secondAttribute="leadingMargin" id="W4p-SW-UGf"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="nV8-NQ-LOF" secondAttribute="leading" id="X9A-yc-NMr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9rU-5M-A37" secondAttribute="trailing" constant="10" id="dDg-J5-yp3"/>
+                            <constraint firstItem="f0E-W7-QfH" firstAttribute="centerX" secondItem="aHe-jm-On6" secondAttribute="centerX" id="du2-Hk-gEu"/>
+                            <constraint firstItem="9O0-Uj-2oM" firstAttribute="top" secondItem="F0b-3m-H9B" secondAttribute="bottom" constant="33.5" id="ers-XY-PsY"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="7d3-Ws-rI7" secondAttribute="leading" id="fVL-uh-GNp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nXA-XJ-lqX" secondAttribute="trailing" id="l83-Qb-dOt"/>
+                            <constraint firstItem="nV8-NQ-LOF" firstAttribute="top" secondItem="f0E-W7-QfH" secondAttribute="bottom" constant="8" id="lEF-O7-Qqf"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="nXA-XJ-lqX" secondAttribute="leading" id="m5w-QU-gQB"/>
+                            <constraint firstItem="9rU-5M-A37" firstAttribute="top" secondItem="u8E-nq-nMu" secondAttribute="bottom" constant="15" id="xhX-x6-CeU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dependentTasksStackView" destination="SUI-1u-Keo" id="gbC-US-XHj"/>
+                        <outlet property="dependentTasksText" destination="saD-vr-f4t" id="A31-B6-rjE"/>
+                        <outlet property="participantsCollectionView" destination="nV8-NQ-LOF" id="qUb-vf-elV"/>
+                        <outlet property="projectDescriptionTextView" destination="nXA-XJ-lqX" id="6BV-dZ-f5A"/>
+                        <outlet property="projectProgressLabel" destination="f0E-W7-QfH" id="bao-Nx-3fT"/>
+                        <outlet property="projectTitle" destination="9rU-5M-A37" id="Wje-jX-bFi"/>
+                        <outlet property="resumeTaskButton" destination="F0b-3m-H9B" id="7Em-a6-rW9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cc-CI-gjS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="6Od-UE-Gp1" customClass="ParticipantsCollectionViewController" customModule="usagi_iOS" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="2943" y="-20"/>
         </scene>
         <!--Projects-->
         <scene sceneID="WUt-0u-rRv">
